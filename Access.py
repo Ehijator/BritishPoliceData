@@ -1,6 +1,4 @@
-from urllib import response
 import time
-from numpy import append
 import requests
 import pandas as pd
 from dateutil.rrule import *
@@ -50,8 +48,7 @@ class Access:
 
     def load_To_Db(self): #ingests data to SQL server
         df = pd.read_csv(r'C:\Python310\Scripts\PoliceAPI\raw_police.csv')
-        df= df.iloc[:,1:] #dropping index column from df
-        
+        df= df.iloc[:,1:] #dropping index column from df       
         engine = create_engine(
             'mssql+pyodbc://BASED/PoliceAPI?trusted_connection=yes&driver=SQL+Server'
             )
@@ -68,6 +65,7 @@ class Access:
         
 a = Access()
 a.main()
+Access().main()
 
         
 
