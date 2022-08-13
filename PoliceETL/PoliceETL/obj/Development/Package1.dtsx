@@ -1,0 +1,882 @@
+<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="8/13/2022 4:16:24 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="BASED"
+  DTS:CreatorName="BASED\Latitude E5540"
+  DTS:DTSID="{2B6FE2CD-BA09-4477-8430-540461EEA028}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="15.0.2000.150"
+  DTS:LocaleID="2057"
+  DTS:ObjectName="FactPackage"
+  DTS:PackageType="5"
+  DTS:VersionBuild="4"
+  DTS:VersionGUID="{2E4E42E7-C809-465D-ABAC-4D8358A27965}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[BASED.PoliceAPI]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{60986C51-6ADF-4ABB-8E5E-4E0E999B355C}"
+      DTS:ObjectName="BASED.PoliceAPI">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=BASED;Initial Catalog=PoliceAPI;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\FactCrime Insertion"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{3DDC7E7E-B681-4747-BBE5-3270138586E5}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="FactCrime Insertion"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{60986C51-6ADF-4ABB-8E5E-4E0E999B355C}"
+          SQLTask:SqlStatementSource="/* Fact Crime Insertion */&#xA;&#xA;with FactCrimeCTE as (&#xA;&#x9;select &#xA;&#x9;DCC.[Category ID],&#xA;&#x9;context,&#xA;&#x9;DOS.OutcomeStatusID,&#xA;&#x9;cast(concat(trim([outcome_status.date]),'-01')as date) as Outcome_status_date,&#xA;&#x9;[location.street.id],&#xA;&#x9;cast(concat(trim(month),'-01')as date) as Crime_Date&#xA;&#x9;from POLICEAPI_STAGING as st&#xA;&#x9;inner join DimCrimeCategory as DCC on (DCC.Category = st.Category)&#xA;&#x9;inner join DimOutcomeStatus as DOS on (DOS.OutcomeStatusCategory = st.[outcome_status.category])&#xA;&#x9;)&#xA;&#xA;insert into FactSales(&#xA;[Category ID] ,&#xA;[context] ,&#xA;[OutcomeStatusID],&#xA;[outcome_status.date],&#xA;[location.street.id],&#xA;Crime_Date)&#xA;&#xA;select * from FactCrimeCTE&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\FactSales Table"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{2257438b-7158-403e-bfcf-8427a13dfd71}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="FactSales Table"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\FactSales Table\FactSales Table"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="FactSales Table"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[FactSales]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\FactSales Table\FactSales Table.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[BASED.PoliceAPI]"
+                  connectionManagerRefId="Package.ConnectionManagers[BASED.PoliceAPI]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\FactSales Table\FactSales Table.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\FactSales Table\FactSales Table.Outputs[OLE DB Source Output].Columns[location.street.id]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\FactSales Table\FactSales Table.Outputs[OLE DB Source Output].ExternalColumns[location.street.id]"
+                      lineageId="Package\FactSales Table\FactSales Table.Outputs[OLE DB Source Output].Columns[location.street.id]"
+                      name="location.street.id"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\FactSales Table\FactSales Table.Outputs[OLE DB Source Output].Columns[ID]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\FactSales Table\FactSales Table.Outputs[OLE DB Source Output].ExternalColumns[ID]"
+                      lineageId="Package\FactSales Table\FactSales Table.Outputs[OLE DB Source Output].Columns[ID]"
+                      name="ID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\FactSales Table\FactSales Table.Outputs[OLE DB Source Output].Columns[Category ID]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\FactSales Table\FactSales Table.Outputs[OLE DB Source Output].ExternalColumns[Category ID]"
+                      length="50"
+                      lineageId="Package\FactSales Table\FactSales Table.Outputs[OLE DB Source Output].Columns[Category ID]"
+                      name="Category ID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\FactSales Table\FactSales Table.Outputs[OLE DB Source Output].Columns[context]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\FactSales Table\FactSales Table.Outputs[OLE DB Source Output].ExternalColumns[context]"
+                      length="50"
+                      lineageId="Package\FactSales Table\FactSales Table.Outputs[OLE DB Source Output].Columns[context]"
+                      name="context"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\FactSales Table\FactSales Table.Outputs[OLE DB Source Output].Columns[OutcomeStatusID]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\FactSales Table\FactSales Table.Outputs[OLE DB Source Output].ExternalColumns[OutcomeStatusID]"
+                      lineageId="Package\FactSales Table\FactSales Table.Outputs[OLE DB Source Output].Columns[OutcomeStatusID]"
+                      name="OutcomeStatusID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\FactSales Table\FactSales Table.Outputs[OLE DB Source Output].Columns[outcome_status.date]"
+                      dataType="dbDate"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\FactSales Table\FactSales Table.Outputs[OLE DB Source Output].ExternalColumns[outcome_status.date]"
+                      lineageId="Package\FactSales Table\FactSales Table.Outputs[OLE DB Source Output].Columns[outcome_status.date]"
+                      name="outcome_status.date"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\FactSales Table\FactSales Table.Outputs[OLE DB Source Output].Columns[Crime_Date]"
+                      dataType="dbDate"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\FactSales Table\FactSales Table.Outputs[OLE DB Source Output].ExternalColumns[Crime_Date]"
+                      lineageId="Package\FactSales Table\FactSales Table.Outputs[OLE DB Source Output].Columns[Crime_Date]"
+                      name="Crime_Date"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\FactSales Table\FactSales Table.Outputs[OLE DB Source Output].ExternalColumns[location.street.id]"
+                      dataType="i4"
+                      name="location.street.id" />
+                    <externalMetadataColumn
+                      refId="Package\FactSales Table\FactSales Table.Outputs[OLE DB Source Output].ExternalColumns[ID]"
+                      dataType="i4"
+                      name="ID" />
+                    <externalMetadataColumn
+                      refId="Package\FactSales Table\FactSales Table.Outputs[OLE DB Source Output].ExternalColumns[Category ID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Category ID" />
+                    <externalMetadataColumn
+                      refId="Package\FactSales Table\FactSales Table.Outputs[OLE DB Source Output].ExternalColumns[context]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="context" />
+                    <externalMetadataColumn
+                      refId="Package\FactSales Table\FactSales Table.Outputs[OLE DB Source Output].ExternalColumns[OutcomeStatusID]"
+                      dataType="i4"
+                      name="OutcomeStatusID" />
+                    <externalMetadataColumn
+                      refId="Package\FactSales Table\FactSales Table.Outputs[OLE DB Source Output].ExternalColumns[outcome_status.date]"
+                      dataType="dbDate"
+                      name="outcome_status.date" />
+                    <externalMetadataColumn
+                      refId="Package\FactSales Table\FactSales Table.Outputs[OLE DB Source Output].ExternalColumns[Crime_Date]"
+                      dataType="dbDate"
+                      name="Crime_Date" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\FactSales Table\FactSales Table.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\FactSales Table\FactSales Table.Outputs[OLE DB Source Error Output].Columns[ID]"
+                      dataType="i4"
+                      lineageId="Package\FactSales Table\FactSales Table.Outputs[OLE DB Source Error Output].Columns[ID]"
+                      name="ID" />
+                    <outputColumn
+                      refId="Package\FactSales Table\FactSales Table.Outputs[OLE DB Source Error Output].Columns[Category ID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\FactSales Table\FactSales Table.Outputs[OLE DB Source Error Output].Columns[Category ID]"
+                      name="Category ID" />
+                    <outputColumn
+                      refId="Package\FactSales Table\FactSales Table.Outputs[OLE DB Source Error Output].Columns[context]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\FactSales Table\FactSales Table.Outputs[OLE DB Source Error Output].Columns[context]"
+                      name="context" />
+                    <outputColumn
+                      refId="Package\FactSales Table\FactSales Table.Outputs[OLE DB Source Error Output].Columns[OutcomeStatusID]"
+                      dataType="i4"
+                      lineageId="Package\FactSales Table\FactSales Table.Outputs[OLE DB Source Error Output].Columns[OutcomeStatusID]"
+                      name="OutcomeStatusID" />
+                    <outputColumn
+                      refId="Package\FactSales Table\FactSales Table.Outputs[OLE DB Source Error Output].Columns[outcome_status.date]"
+                      dataType="dbDate"
+                      lineageId="Package\FactSales Table\FactSales Table.Outputs[OLE DB Source Error Output].Columns[outcome_status.date]"
+                      name="outcome_status.date" />
+                    <outputColumn
+                      refId="Package\FactSales Table\FactSales Table.Outputs[OLE DB Source Error Output].Columns[location.street.id]"
+                      dataType="i4"
+                      lineageId="Package\FactSales Table\FactSales Table.Outputs[OLE DB Source Error Output].Columns[location.street.id]"
+                      name="location.street.id" />
+                    <outputColumn
+                      refId="Package\FactSales Table\FactSales Table.Outputs[OLE DB Source Error Output].Columns[Crime_Date]"
+                      dataType="dbDate"
+                      lineageId="Package\FactSales Table\FactSales Table.Outputs[OLE DB Source Error Output].Columns[Crime_Date]"
+                      name="Crime_Date" />
+                    <outputColumn
+                      refId="Package\FactSales Table\FactSales Table.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\FactSales Table\FactSales Table.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\FactSales Table\FactSales Table.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\FactSales Table\FactSales Table.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Police Api Staging Source"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{a6f5b243-abf4-4a75-a0c4-e842385cb2c3}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Police Api Staging Source"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Police Api Staging Source\PoliceAPI Staging"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="PoliceAPI Staging"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[POLICEAPI_STAGING]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Police Api Staging Source\PoliceAPI Staging.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[BASED.PoliceAPI]"
+                  connectionManagerRefId="Package.ConnectionManagers[BASED.PoliceAPI]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Police Api Staging Source\PoliceAPI Staging.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Police Api Staging Source\PoliceAPI Staging.Outputs[OLE DB Source Output].Columns[Index]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Police Api Staging Source\PoliceAPI Staging.Outputs[OLE DB Source Output].ExternalColumns[Index]"
+                      lineageId="Package\Police Api Staging Source\PoliceAPI Staging.Outputs[OLE DB Source Output].Columns[Index]"
+                      name="Index"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Police Api Staging Source\PoliceAPI Staging.Outputs[OLE DB Source Output].Columns[Category]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Police Api Staging Source\PoliceAPI Staging.Outputs[OLE DB Source Output].ExternalColumns[Category]"
+                      length="50"
+                      lineageId="Package\Police Api Staging Source\PoliceAPI Staging.Outputs[OLE DB Source Output].Columns[Category]"
+                      name="Category"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Police Api Staging Source\PoliceAPI Staging.Outputs[OLE DB Source Output].Columns[Location_type]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Police Api Staging Source\PoliceAPI Staging.Outputs[OLE DB Source Output].ExternalColumns[Location_type]"
+                      length="50"
+                      lineageId="Package\Police Api Staging Source\PoliceAPI Staging.Outputs[OLE DB Source Output].Columns[Location_type]"
+                      name="Location_type"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Police Api Staging Source\PoliceAPI Staging.Outputs[OLE DB Source Output].Columns[context]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Police Api Staging Source\PoliceAPI Staging.Outputs[OLE DB Source Output].ExternalColumns[context]"
+                      length="50"
+                      lineageId="Package\Police Api Staging Source\PoliceAPI Staging.Outputs[OLE DB Source Output].Columns[context]"
+                      name="context"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Police Api Staging Source\PoliceAPI Staging.Outputs[OLE DB Source Output].Columns[outcome_status]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Police Api Staging Source\PoliceAPI Staging.Outputs[OLE DB Source Output].ExternalColumns[outcome_status]"
+                      length="50"
+                      lineageId="Package\Police Api Staging Source\PoliceAPI Staging.Outputs[OLE DB Source Output].Columns[outcome_status]"
+                      name="outcome_status"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Police Api Staging Source\PoliceAPI Staging.Outputs[OLE DB Source Output].Columns[persistent_id]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Police Api Staging Source\PoliceAPI Staging.Outputs[OLE DB Source Output].ExternalColumns[persistent_id]"
+                      length="225"
+                      lineageId="Package\Police Api Staging Source\PoliceAPI Staging.Outputs[OLE DB Source Output].Columns[persistent_id]"
+                      name="persistent_id"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Police Api Staging Source\PoliceAPI Staging.Outputs[OLE DB Source Output].Columns[id]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Police Api Staging Source\PoliceAPI Staging.Outputs[OLE DB Source Output].ExternalColumns[id]"
+                      lineageId="Package\Police Api Staging Source\PoliceAPI Staging.Outputs[OLE DB Source Output].Columns[id]"
+                      name="id"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Police Api Staging Source\PoliceAPI Staging.Outputs[OLE DB Source Output].Columns[location_subtype]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Police Api Staging Source\PoliceAPI Staging.Outputs[OLE DB Source Output].ExternalColumns[location_subtype]"
+                      length="30"
+                      lineageId="Package\Police Api Staging Source\PoliceAPI Staging.Outputs[OLE DB Source Output].Columns[location_subtype]"
+                      name="location_subtype"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Police Api Staging Source\PoliceAPI Staging.Outputs[OLE DB Source Output].Columns[month]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Police Api Staging Source\PoliceAPI Staging.Outputs[OLE DB Source Output].ExternalColumns[month]"
+                      length="30"
+                      lineageId="Package\Police Api Staging Source\PoliceAPI Staging.Outputs[OLE DB Source Output].Columns[month]"
+                      name="month"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Police Api Staging Source\PoliceAPI Staging.Outputs[OLE DB Source Output].Columns[location.latitude]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Police Api Staging Source\PoliceAPI Staging.Outputs[OLE DB Source Output].ExternalColumns[location.latitude]"
+                      lineageId="Package\Police Api Staging Source\PoliceAPI Staging.Outputs[OLE DB Source Output].Columns[location.latitude]"
+                      name="location.latitude"
+                      precision="8"
+                      scale="6"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Police Api Staging Source\PoliceAPI Staging.Outputs[OLE DB Source Output].Columns[location.street.id]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Police Api Staging Source\PoliceAPI Staging.Outputs[OLE DB Source Output].ExternalColumns[location.street.id]"
+                      lineageId="Package\Police Api Staging Source\PoliceAPI Staging.Outputs[OLE DB Source Output].Columns[location.street.id]"
+                      name="location.street.id"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Police Api Staging Source\PoliceAPI Staging.Outputs[OLE DB Source Output].Columns[location.street.name]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Police Api Staging Source\PoliceAPI Staging.Outputs[OLE DB Source Output].ExternalColumns[location.street.name]"
+                      length="50"
+                      lineageId="Package\Police Api Staging Source\PoliceAPI Staging.Outputs[OLE DB Source Output].Columns[location.street.name]"
+                      name="location.street.name"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Police Api Staging Source\PoliceAPI Staging.Outputs[OLE DB Source Output].Columns[location.longitude]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Police Api Staging Source\PoliceAPI Staging.Outputs[OLE DB Source Output].ExternalColumns[location.longitude]"
+                      lineageId="Package\Police Api Staging Source\PoliceAPI Staging.Outputs[OLE DB Source Output].Columns[location.longitude]"
+                      name="location.longitude"
+                      precision="9"
+                      scale="6"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Police Api Staging Source\PoliceAPI Staging.Outputs[OLE DB Source Output].Columns[outcome_status.category]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Police Api Staging Source\PoliceAPI Staging.Outputs[OLE DB Source Output].ExternalColumns[outcome_status.category]"
+                      length="225"
+                      lineageId="Package\Police Api Staging Source\PoliceAPI Staging.Outputs[OLE DB Source Output].Columns[outcome_status.category]"
+                      name="outcome_status.category"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Police Api Staging Source\PoliceAPI Staging.Outputs[OLE DB Source Output].Columns[outcome_status.date]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Police Api Staging Source\PoliceAPI Staging.Outputs[OLE DB Source Output].ExternalColumns[outcome_status.date]"
+                      length="30"
+                      lineageId="Package\Police Api Staging Source\PoliceAPI Staging.Outputs[OLE DB Source Output].Columns[outcome_status.date]"
+                      name="outcome_status.date"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Police Api Staging Source\PoliceAPI Staging.Outputs[OLE DB Source Output].ExternalColumns[Index]"
+                      dataType="i4"
+                      name="Index" />
+                    <externalMetadataColumn
+                      refId="Package\Police Api Staging Source\PoliceAPI Staging.Outputs[OLE DB Source Output].ExternalColumns[Category]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Category" />
+                    <externalMetadataColumn
+                      refId="Package\Police Api Staging Source\PoliceAPI Staging.Outputs[OLE DB Source Output].ExternalColumns[Location_type]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Location_type" />
+                    <externalMetadataColumn
+                      refId="Package\Police Api Staging Source\PoliceAPI Staging.Outputs[OLE DB Source Output].ExternalColumns[context]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="context" />
+                    <externalMetadataColumn
+                      refId="Package\Police Api Staging Source\PoliceAPI Staging.Outputs[OLE DB Source Output].ExternalColumns[outcome_status]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="outcome_status" />
+                    <externalMetadataColumn
+                      refId="Package\Police Api Staging Source\PoliceAPI Staging.Outputs[OLE DB Source Output].ExternalColumns[persistent_id]"
+                      codePage="1252"
+                      dataType="str"
+                      length="225"
+                      name="persistent_id" />
+                    <externalMetadataColumn
+                      refId="Package\Police Api Staging Source\PoliceAPI Staging.Outputs[OLE DB Source Output].ExternalColumns[id]"
+                      dataType="i4"
+                      name="id" />
+                    <externalMetadataColumn
+                      refId="Package\Police Api Staging Source\PoliceAPI Staging.Outputs[OLE DB Source Output].ExternalColumns[location_subtype]"
+                      codePage="1252"
+                      dataType="str"
+                      length="30"
+                      name="location_subtype" />
+                    <externalMetadataColumn
+                      refId="Package\Police Api Staging Source\PoliceAPI Staging.Outputs[OLE DB Source Output].ExternalColumns[month]"
+                      codePage="1252"
+                      dataType="str"
+                      length="30"
+                      name="month" />
+                    <externalMetadataColumn
+                      refId="Package\Police Api Staging Source\PoliceAPI Staging.Outputs[OLE DB Source Output].ExternalColumns[location.latitude]"
+                      dataType="numeric"
+                      name="location.latitude"
+                      precision="8"
+                      scale="6" />
+                    <externalMetadataColumn
+                      refId="Package\Police Api Staging Source\PoliceAPI Staging.Outputs[OLE DB Source Output].ExternalColumns[location.street.id]"
+                      dataType="i4"
+                      name="location.street.id" />
+                    <externalMetadataColumn
+                      refId="Package\Police Api Staging Source\PoliceAPI Staging.Outputs[OLE DB Source Output].ExternalColumns[location.street.name]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="location.street.name" />
+                    <externalMetadataColumn
+                      refId="Package\Police Api Staging Source\PoliceAPI Staging.Outputs[OLE DB Source Output].ExternalColumns[location.longitude]"
+                      dataType="numeric"
+                      name="location.longitude"
+                      precision="9"
+                      scale="6" />
+                    <externalMetadataColumn
+                      refId="Package\Police Api Staging Source\PoliceAPI Staging.Outputs[OLE DB Source Output].ExternalColumns[outcome_status.category]"
+                      codePage="1252"
+                      dataType="str"
+                      length="225"
+                      name="outcome_status.category" />
+                    <externalMetadataColumn
+                      refId="Package\Police Api Staging Source\PoliceAPI Staging.Outputs[OLE DB Source Output].ExternalColumns[outcome_status.date]"
+                      codePage="1252"
+                      dataType="str"
+                      length="30"
+                      name="outcome_status.date" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Police Api Staging Source\PoliceAPI Staging.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Police Api Staging Source\PoliceAPI Staging.Outputs[OLE DB Source Error Output].Columns[Index]"
+                      dataType="i4"
+                      lineageId="Package\Police Api Staging Source\PoliceAPI Staging.Outputs[OLE DB Source Error Output].Columns[Index]"
+                      name="Index" />
+                    <outputColumn
+                      refId="Package\Police Api Staging Source\PoliceAPI Staging.Outputs[OLE DB Source Error Output].Columns[Category]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Police Api Staging Source\PoliceAPI Staging.Outputs[OLE DB Source Error Output].Columns[Category]"
+                      name="Category" />
+                    <outputColumn
+                      refId="Package\Police Api Staging Source\PoliceAPI Staging.Outputs[OLE DB Source Error Output].Columns[Location_type]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Police Api Staging Source\PoliceAPI Staging.Outputs[OLE DB Source Error Output].Columns[Location_type]"
+                      name="Location_type" />
+                    <outputColumn
+                      refId="Package\Police Api Staging Source\PoliceAPI Staging.Outputs[OLE DB Source Error Output].Columns[context]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Police Api Staging Source\PoliceAPI Staging.Outputs[OLE DB Source Error Output].Columns[context]"
+                      name="context" />
+                    <outputColumn
+                      refId="Package\Police Api Staging Source\PoliceAPI Staging.Outputs[OLE DB Source Error Output].Columns[outcome_status]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Police Api Staging Source\PoliceAPI Staging.Outputs[OLE DB Source Error Output].Columns[outcome_status]"
+                      name="outcome_status" />
+                    <outputColumn
+                      refId="Package\Police Api Staging Source\PoliceAPI Staging.Outputs[OLE DB Source Error Output].Columns[persistent_id]"
+                      codePage="1252"
+                      dataType="str"
+                      length="225"
+                      lineageId="Package\Police Api Staging Source\PoliceAPI Staging.Outputs[OLE DB Source Error Output].Columns[persistent_id]"
+                      name="persistent_id" />
+                    <outputColumn
+                      refId="Package\Police Api Staging Source\PoliceAPI Staging.Outputs[OLE DB Source Error Output].Columns[id]"
+                      dataType="i4"
+                      lineageId="Package\Police Api Staging Source\PoliceAPI Staging.Outputs[OLE DB Source Error Output].Columns[id]"
+                      name="id" />
+                    <outputColumn
+                      refId="Package\Police Api Staging Source\PoliceAPI Staging.Outputs[OLE DB Source Error Output].Columns[location_subtype]"
+                      codePage="1252"
+                      dataType="str"
+                      length="30"
+                      lineageId="Package\Police Api Staging Source\PoliceAPI Staging.Outputs[OLE DB Source Error Output].Columns[location_subtype]"
+                      name="location_subtype" />
+                    <outputColumn
+                      refId="Package\Police Api Staging Source\PoliceAPI Staging.Outputs[OLE DB Source Error Output].Columns[month]"
+                      codePage="1252"
+                      dataType="str"
+                      length="30"
+                      lineageId="Package\Police Api Staging Source\PoliceAPI Staging.Outputs[OLE DB Source Error Output].Columns[month]"
+                      name="month" />
+                    <outputColumn
+                      refId="Package\Police Api Staging Source\PoliceAPI Staging.Outputs[OLE DB Source Error Output].Columns[location.latitude]"
+                      dataType="numeric"
+                      lineageId="Package\Police Api Staging Source\PoliceAPI Staging.Outputs[OLE DB Source Error Output].Columns[location.latitude]"
+                      name="location.latitude"
+                      precision="8"
+                      scale="6" />
+                    <outputColumn
+                      refId="Package\Police Api Staging Source\PoliceAPI Staging.Outputs[OLE DB Source Error Output].Columns[location.street.id]"
+                      dataType="i4"
+                      lineageId="Package\Police Api Staging Source\PoliceAPI Staging.Outputs[OLE DB Source Error Output].Columns[location.street.id]"
+                      name="location.street.id" />
+                    <outputColumn
+                      refId="Package\Police Api Staging Source\PoliceAPI Staging.Outputs[OLE DB Source Error Output].Columns[location.street.name]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Police Api Staging Source\PoliceAPI Staging.Outputs[OLE DB Source Error Output].Columns[location.street.name]"
+                      name="location.street.name" />
+                    <outputColumn
+                      refId="Package\Police Api Staging Source\PoliceAPI Staging.Outputs[OLE DB Source Error Output].Columns[location.longitude]"
+                      dataType="numeric"
+                      lineageId="Package\Police Api Staging Source\PoliceAPI Staging.Outputs[OLE DB Source Error Output].Columns[location.longitude]"
+                      name="location.longitude"
+                      precision="9"
+                      scale="6" />
+                    <outputColumn
+                      refId="Package\Police Api Staging Source\PoliceAPI Staging.Outputs[OLE DB Source Error Output].Columns[outcome_status.category]"
+                      codePage="1252"
+                      dataType="str"
+                      length="225"
+                      lineageId="Package\Police Api Staging Source\PoliceAPI Staging.Outputs[OLE DB Source Error Output].Columns[outcome_status.category]"
+                      name="outcome_status.category" />
+                    <outputColumn
+                      refId="Package\Police Api Staging Source\PoliceAPI Staging.Outputs[OLE DB Source Error Output].Columns[outcome_status.date]"
+                      codePage="1252"
+                      dataType="str"
+                      length="30"
+                      lineageId="Package\Police Api Staging Source\PoliceAPI Staging.Outputs[OLE DB Source Error Output].Columns[outcome_status.date]"
+                      name="outcome_status.date" />
+                    <outputColumn
+                      refId="Package\Police Api Staging Source\PoliceAPI Staging.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Police Api Staging Source\PoliceAPI Staging.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Police Api Staging Source\PoliceAPI Staging.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Police Api Staging Source\PoliceAPI Staging.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{17798279-3B54-4FEA-AE11-6628EFDD832E}"
+      DTS:From="Package\Police Api Staging Source"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\FactCrime Insertion" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
+      DTS:CreationName=""
+      DTS:DTSID="{4D2600A8-1919-4720-9631-D1ACD7097A95}"
+      DTS:From="Package\FactCrime Insertion"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 1"
+      DTS:To="Package\FactSales Table" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="171,42"
+          Id="Package\FactCrime Insertion"
+          TopLeft="307,143" />
+        <NodeLayout
+          Size="198,42"
+          Id="Package\Police Api Staging Source"
+          TopLeft="297,45" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="394.25,87">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,56"
+              Start="0,0"
+              End="0,48.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,48.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="152,42"
+          Id="Package\FactSales Table"
+          TopLeft="311,268" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 1]"
+          TopLeft="389.75,185">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,83"
+              Start="0,0"
+              End="0,75.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,75.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Police Api Staging Source">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="161,42"
+          Id="Package\Police Api Staging Source\PoliceAPI Staging"
+          TopLeft="110,37" />
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Police Api Staging Source\PoliceAPI Staging">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\FactSales Table">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="152,42"
+          Id="Package\FactSales Table\FactSales Table"
+          TopLeft="185,66" />
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\FactSales Table\FactSales Table">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

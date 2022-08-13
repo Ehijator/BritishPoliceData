@@ -1,7 +1,7 @@
 DROP TABLE IF EXISTS DimLocation
 CREATE TABLE DimLocation
 (
-[location.street.id] [int] NOT NULL PRIMARY KEY identity,
+[location.street.id] [int],
 [Location_type] [char](20),
 [location_subtype] [char](20),
 [location.street.name] [char](60),

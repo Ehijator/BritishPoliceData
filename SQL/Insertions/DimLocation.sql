@@ -1,5 +1,6 @@
 /* Query for Dim Location */
-SELECT TOP (*)
+with DimLocationCTE as (
+SELECT 
 [location.street.id],
 Location_type,
 location_subtype,
@@ -7,8 +8,20 @@ location_subtype,
 [location.longitude],
 [location.latitude]
 
-from POLICEAPI_STAGING
+from [PoliceAPI].[dbo].[POLICEAPI_STAGING]
 
 Group by [location.street.id], Location_type, location_subtype,[location.street.name],[location.longitude],[location.latitude]
 
-order by [location.street.id] Asc
+)
+insert into [PoliceAPI].[dbo].[DimLocation]
+([location.street.id],
+Location_type,
+location_subtype,
+[location.street.name],
+[location.longitude],
+[location.latitude])
+
+
+select * from DimLocationCTE
+
+
