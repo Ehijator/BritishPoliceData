@@ -3,20 +3,20 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28307.1831
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{159641D6-6404-4A2A-AE62-294DE0FE8301}") = "PoliceETL", "PoliceETL\PoliceETL.dtproj", "{F8A399F7-F69E-44B4-A8AE-EAD422D8CE48}"
+Project("{159641D6-6404-4A2A-AE62-294DE0FE8301}") = "PoliceAPI_ETL", "PoliceAPI_ETL\PoliceAPI_ETL.dtproj", "{1FC1E08E-BA72-4750-8F06-FEF0163A6AE9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Development|Default = Development|Default
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{F8A399F7-F69E-44B4-A8AE-EAD422D8CE48}.Development|Default.ActiveCfg = Development
-		{F8A399F7-F69E-44B4-A8AE-EAD422D8CE48}.Development|Default.Build.0 = Development
+		{1FC1E08E-BA72-4750-8F06-FEF0163A6AE9}.Development|Default.ActiveCfg = Development
+		{1FC1E08E-BA72-4750-8F06-FEF0163A6AE9}.Development|Default.Build.0 = Development
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {B19CDB41-415A-4E16-A059-DCAA330B1C25}
+		SolutionGuid = {F5BA63E7-545E-4985-BDCE-7DE1BDF74B86}
 	EndGlobalSection
 EndGlobal

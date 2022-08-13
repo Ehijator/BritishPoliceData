@@ -1,379 +1,29 @@
 ﻿<?xml version="1.0"?>
 <DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
   DTS:refId="Package"
-  DTS:CreationDate="7/31/2022 2:46:27 PM"
+  DTS:CreationDate="8/13/2022 5:55:19 PM"
   DTS:CreationName="Microsoft.Package"
   DTS:CreatorComputerName="BASED"
   DTS:CreatorName="BASED\Latitude E5540"
-  DTS:DTSID="{56EEB1F5-6D4C-4383-96D7-A6B6D641173E}"
+  DTS:DTSID="{40A9AF09-4070-4B56-BD9C-18723AE92A3B}"
   DTS:ExecutableType="Microsoft.Package"
   DTS:LastModifiedProductVersion="15.0.2000.150"
   DTS:LocaleID="2057"
   DTS:ObjectName="Package"
   DTS:PackageType="5"
-  DTS:VersionBuild="18"
-  DTS:VersionGUID="{5341085A-B912-4567-ACB7-DEFE3136F60A}">
+  DTS:VersionBuild="2"
+  DTS:VersionGUID="{DE828443-8E42-4271-A959-ACB8E5A0C2D0}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
     <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[BASED.PoliceAPI]"
       DTS:CreationName="OLEDB"
-      DTS:DTSID="{60986C51-6ADF-4ABB-8E5E-4E0E999B355C}"
+      DTS:DTSID="{B5519516-3A9E-4601-BFFF-0BFBAEFE6A47}"
       DTS:ObjectName="BASED.PoliceAPI">
       <DTS:ObjectData>
         <DTS:ConnectionManager
           DTS:ConnectionString="Data Source=BASED;Initial Catalog=PoliceAPI;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
-      </DTS:ObjectData>
-    </DTS:ConnectionManager>
-    <DTS:ConnectionManager
-      DTS:refId="Package.ConnectionManagers[BASED.PoliceAPI 1]"
-      DTS:CreationName="OLEDB"
-      DTS:DTSID="{F79465CC-4834-49F5-B0B4-86C5B5010833}"
-      DTS:ObjectName="BASED.PoliceAPI 1">
-      <DTS:ObjectData>
-        <DTS:ConnectionManager
-          DTS:ConnectionString="Data Source=BASED;Initial Catalog=PoliceAPI;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
-      </DTS:ObjectData>
-    </DTS:ConnectionManager>
-    <DTS:ConnectionManager
-      DTS:refId="Package.ConnectionManagers[BASED\Latitude E5540]"
-      DTS:CreationName="OLEDB"
-      DTS:DTSID="{7A7F311B-06C0-4344-9D36-1E70F5DE8F58}"
-      DTS:ObjectName="BASED\Latitude E5540">
-      <DTS:ObjectData>
-        <DTS:ConnectionManager
-          DTS:ConnectionString="Data Source=BASED\Latitude E5540;Provider=MSOLEDBSQL.1;Integrated Security=SSPI;Application Name=SSIS-Package-{7A7F311B-06C0-4344-9D36-1E70F5DE8F58}BASED\Latitude E5540;Auto Translate=False;" />
-      </DTS:ObjectData>
-    </DTS:ConnectionManager>
-    <DTS:ConnectionManager
-      DTS:refId="Package.ConnectionManagers[Excel Connection Manager]"
-      DTS:CreationName="EXCEL"
-      DTS:DTSID="{6DC5A9DF-4FD3-45F0-9005-66825A26F5B7}"
-      DTS:ObjectName="Excel Connection Manager">
-      <DTS:ObjectData>
-        <DTS:ConnectionManager
-          DTS:ConnectionString="Provider=Microsoft.Jet.OLEDB.4.0;Data Source=C:\Users\Latitude E5540\Desktop\test.xls;Extended Properties=&quot;EXCEL 8.0;HDR=YES&quot;;" />
-      </DTS:ObjectData>
-    </DTS:ConnectionManager>
-    <DTS:ConnectionManager
-      DTS:refId="Package.ConnectionManagers[Excel Connection Manager 1]"
-      DTS:CreationName="EXCEL"
-      DTS:DTSID="{95D37BC1-B0F0-4D38-A095-9458F00F9FF6}"
-      DTS:ObjectName="Excel Connection Manager 1">
-      <DTS:ObjectData>
-        <DTS:ConnectionManager
-          DTS:ConnectionString="Provider=Microsoft.Jet.OLEDB.4.0;Data Source=C:\Users\Latitude E5540\Desktop\test.xls;Extended Properties=&quot;EXCEL 8.0;HDR=YES&quot;;" />
-      </DTS:ObjectData>
-    </DTS:ConnectionManager>
-    <DTS:ConnectionManager
-      DTS:refId="Package.ConnectionManagers[Flat File Connection Manager]"
-      DTS:CreationName="FLATFILE"
-      DTS:DTSID="{6C30A463-7257-450C-B9A5-F8CDE517E5BE}"
-      DTS:ObjectName="Flat File Connection Manager">
-      <DTS:ObjectData>
-        <DTS:ConnectionManager
-          DTS:Format="Delimited"
-          DTS:LocaleID="2057"
-          DTS:HeaderRowDelimiter="_x000D__x000A_"
-          DTS:ColumnNamesInFirstDataRow="True"
-          DTS:RowDelimiter=""
-          DTS:TextQualifier="_x003C_none_x003E_"
-          DTS:CodePage="1252"
-          DTS:ConnectionString="C:\Python310\Scripts\PoliceAPI\raw_police.csv">
-          <DTS:FlatFileColumns>
-            <DTS:FlatFileColumn
-              DTS:ColumnType="Delimited"
-              DTS:ColumnDelimiter="_x002C_"
-              DTS:MaximumWidth="50"
-              DTS:DataType="129"
-              DTS:TextQualified="True"
-              DTS:ObjectName="Column 0"
-              DTS:DTSID="{DB30FE22-C7B6-4042-9D70-8FC8818121A6}"
-              DTS:CreationName="" />
-            <DTS:FlatFileColumn
-              DTS:ColumnType="Delimited"
-              DTS:ColumnDelimiter="_x002C_"
-              DTS:MaximumWidth="50"
-              DTS:DataType="129"
-              DTS:TextQualified="True"
-              DTS:ObjectName="category"
-              DTS:DTSID="{70BB9972-C3AE-4468-AE23-8143C86DD670}"
-              DTS:CreationName="" />
-            <DTS:FlatFileColumn
-              DTS:ColumnType="Delimited"
-              DTS:ColumnDelimiter="_x002C_"
-              DTS:MaximumWidth="50"
-              DTS:DataType="129"
-              DTS:TextQualified="True"
-              DTS:ObjectName="location_type"
-              DTS:DTSID="{1057E623-8F8B-4FBE-9BB8-6220E218B98A}"
-              DTS:CreationName="" />
-            <DTS:FlatFileColumn
-              DTS:ColumnType="Delimited"
-              DTS:ColumnDelimiter="_x002C_"
-              DTS:MaximumWidth="50"
-              DTS:DataType="129"
-              DTS:TextQualified="True"
-              DTS:ObjectName="context"
-              DTS:DTSID="{A7AE3069-5304-4207-8A15-6AE90CF2D301}"
-              DTS:CreationName="" />
-            <DTS:FlatFileColumn
-              DTS:ColumnType="Delimited"
-              DTS:ColumnDelimiter="_x002C_"
-              DTS:MaximumWidth="50"
-              DTS:DataType="129"
-              DTS:TextQualified="True"
-              DTS:ObjectName="outcome_status"
-              DTS:DTSID="{47E69443-79EF-4385-958B-1E3F6B0198D6}"
-              DTS:CreationName="" />
-            <DTS:FlatFileColumn
-              DTS:ColumnType="Delimited"
-              DTS:ColumnDelimiter="_x002C_"
-              DTS:MaximumWidth="50"
-              DTS:DataType="129"
-              DTS:TextQualified="True"
-              DTS:ObjectName="persistent_id"
-              DTS:DTSID="{5BC5422D-5C0E-47B3-A9AF-3A5B8C9BA0FF}"
-              DTS:CreationName="" />
-            <DTS:FlatFileColumn
-              DTS:ColumnType="Delimited"
-              DTS:ColumnDelimiter="_x002C_"
-              DTS:MaximumWidth="50"
-              DTS:DataType="129"
-              DTS:TextQualified="True"
-              DTS:ObjectName="id"
-              DTS:DTSID="{12D5A58E-D67E-4284-89D7-EEA1F62D39F4}"
-              DTS:CreationName="" />
-            <DTS:FlatFileColumn
-              DTS:ColumnType="Delimited"
-              DTS:ColumnDelimiter="_x002C_"
-              DTS:MaximumWidth="50"
-              DTS:DataType="129"
-              DTS:TextQualified="True"
-              DTS:ObjectName="location_subtype"
-              DTS:DTSID="{F34C9C8C-418B-4E55-907B-4B52C96CE65A}"
-              DTS:CreationName="" />
-            <DTS:FlatFileColumn
-              DTS:ColumnType="Delimited"
-              DTS:ColumnDelimiter="_x002C_"
-              DTS:MaximumWidth="50"
-              DTS:DataType="129"
-              DTS:TextQualified="True"
-              DTS:ObjectName="month"
-              DTS:DTSID="{E3B17CF7-358B-481C-BC14-88B6DB31DACD}"
-              DTS:CreationName="" />
-            <DTS:FlatFileColumn
-              DTS:ColumnType="Delimited"
-              DTS:ColumnDelimiter="_x002C_"
-              DTS:MaximumWidth="50"
-              DTS:DataType="129"
-              DTS:TextQualified="True"
-              DTS:ObjectName="location latitude"
-              DTS:DTSID="{EBA0722C-2E40-4AAF-BF72-854B8722E29F}"
-              DTS:CreationName="" />
-            <DTS:FlatFileColumn
-              DTS:ColumnType="Delimited"
-              DTS:ColumnDelimiter="_x002C_"
-              DTS:MaximumWidth="50"
-              DTS:DataType="129"
-              DTS:TextQualified="True"
-              DTS:ObjectName="location street id"
-              DTS:DTSID="{BFFCDC2A-D38C-4C11-AAED-F796C5BB4B9D}"
-              DTS:CreationName="" />
-            <DTS:FlatFileColumn
-              DTS:ColumnType="Delimited"
-              DTS:ColumnDelimiter="_x002C_"
-              DTS:MaximumWidth="50"
-              DTS:DataType="129"
-              DTS:TextQualified="True"
-              DTS:ObjectName="location street name"
-              DTS:DTSID="{D1F14095-6427-488D-B03A-4A0F77604DFE}"
-              DTS:CreationName="" />
-            <DTS:FlatFileColumn
-              DTS:ColumnType="Delimited"
-              DTS:ColumnDelimiter="_x002C_"
-              DTS:MaximumWidth="50"
-              DTS:DataType="129"
-              DTS:TextQualified="True"
-              DTS:ObjectName="location longitude"
-              DTS:DTSID="{D3B62566-96E9-4CC6-8DC4-926DF48BAB29}"
-              DTS:CreationName="" />
-            <DTS:FlatFileColumn
-              DTS:ColumnType="Delimited"
-              DTS:ColumnDelimiter="_x002C_"
-              DTS:MaximumWidth="50"
-              DTS:DataType="129"
-              DTS:TextQualified="True"
-              DTS:ObjectName="outcome_status category"
-              DTS:DTSID="{FF770109-94C5-4C3F-AF23-B58F89E8759E}"
-              DTS:CreationName="" />
-            <DTS:FlatFileColumn
-              DTS:ColumnType="Delimited"
-              DTS:ColumnDelimiter="_x000D__x000A_"
-              DTS:MaximumWidth="50"
-              DTS:DataType="129"
-              DTS:TextQualified="True"
-              DTS:ObjectName="outcome_status date"
-              DTS:DTSID="{032C4600-64D4-4502-9715-62D7F7766B25}"
-              DTS:CreationName="" />
-          </DTS:FlatFileColumns>
-        </DTS:ConnectionManager>
-      </DTS:ObjectData>
-    </DTS:ConnectionManager>
-    <DTS:ConnectionManager
-      DTS:refId="Package.ConnectionManagers[localhost.BASED\Latitude E5540]"
-      DTS:CreationName="OLEDB"
-      DTS:DTSID="{85AB3A2C-7AAD-45F3-92F4-7FFAB8090A7D}"
-      DTS:ObjectName="localhost.BASED\Latitude E5540">
-      <DTS:ObjectData>
-        <DTS:ConnectionManager
-          DTS:ConnectionString="Data Source=localhost;Initial Catalog=BASED\Latitude E5540;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
-      </DTS:ObjectData>
-    </DTS:ConnectionManager>
-    <DTS:ConnectionManager
-      DTS:refId="Package.ConnectionManagers[Raw_Police_data]"
-      DTS:CreationName="FLATFILE"
-      DTS:DTSID="{4832A902-97E2-42FE-B107-02C164561F26}"
-      DTS:ObjectName="Raw_Police_data">
-      <DTS:ObjectData>
-        <DTS:ConnectionManager
-          DTS:Format="Delimited"
-          DTS:LocaleID="2057"
-          DTS:HeaderRowDelimiter="_x000D__x000A_"
-          DTS:ColumnNamesInFirstDataRow="True"
-          DTS:RowDelimiter=""
-          DTS:TextQualifier="_x003C_none_x003E_"
-          DTS:CodePage="1252"
-          DTS:ConnectionString="C:\Python310\Scripts\PoliceAPI\raw_police.csv">
-          <DTS:FlatFileColumns>
-            <DTS:FlatFileColumn
-              DTS:ColumnType="Delimited"
-              DTS:ColumnDelimiter="_x002C_"
-              DTS:DataType="72"
-              DTS:TextQualified="True"
-              DTS:ObjectName="Index"
-              DTS:DTSID="{ABC830FD-E63F-45ED-AA85-9982EB4BF63B}"
-              DTS:CreationName="" />
-            <DTS:FlatFileColumn
-              DTS:ColumnType="Delimited"
-              DTS:ColumnDelimiter="_x002C_"
-              DTS:MaximumWidth="21"
-              DTS:DataType="129"
-              DTS:TextQualified="True"
-              DTS:ObjectName="category"
-              DTS:DTSID="{9AB29351-67DC-4602-ADDB-7B5E0010314A}"
-              DTS:CreationName="" />
-            <DTS:FlatFileColumn
-              DTS:ColumnType="Delimited"
-              DTS:ColumnDelimiter="_x002C_"
-              DTS:MaximumWidth="5"
-              DTS:DataType="129"
-              DTS:TextQualified="True"
-              DTS:ObjectName="location_type"
-              DTS:DTSID="{F643E07C-3159-4C59-9717-37DCAA58DA41}"
-              DTS:CreationName="" />
-            <DTS:FlatFileColumn
-              DTS:ColumnType="Delimited"
-              DTS:ColumnDelimiter="_x002C_"
-              DTS:DataType="129"
-              DTS:TextQualified="True"
-              DTS:ObjectName="context"
-              DTS:DTSID="{A094E3A9-04D1-4530-B4FB-CBD005D76FB3}"
-              DTS:CreationName="" />
-            <DTS:FlatFileColumn
-              DTS:ColumnType="Delimited"
-              DTS:ColumnDelimiter="_x002C_"
-              DTS:DataType="129"
-              DTS:TextQualified="True"
-              DTS:ObjectName="outcome_status"
-              DTS:DTSID="{0D0463F1-2702-4FAE-9799-E09B2C1921E1}"
-              DTS:CreationName="" />
-            <DTS:FlatFileColumn
-              DTS:ColumnType="Delimited"
-              DTS:ColumnDelimiter="_x002C_"
-              DTS:MaximumWidth="64"
-              DTS:DataType="129"
-              DTS:TextQualified="True"
-              DTS:ObjectName="persistent_id"
-              DTS:DTSID="{5AEAAAEF-DAB9-4FE9-B4A5-8A4777772002}"
-              DTS:CreationName="" />
-            <DTS:FlatFileColumn
-              DTS:ColumnType="Delimited"
-              DTS:ColumnDelimiter="_x002C_"
-              DTS:DataType="3"
-              DTS:TextQualified="True"
-              DTS:ObjectName="id"
-              DTS:DTSID="{125DD720-E2E9-4517-9140-6856408953DE}"
-              DTS:CreationName="" />
-            <DTS:FlatFileColumn
-              DTS:ColumnType="Delimited"
-              DTS:ColumnDelimiter="_x002C_"
-              DTS:DataType="129"
-              DTS:TextQualified="True"
-              DTS:ObjectName="location_subtype"
-              DTS:DTSID="{6BABCF51-BB63-45A7-8A0D-B25319E03472}"
-              DTS:CreationName="" />
-            <DTS:FlatFileColumn
-              DTS:ColumnType="Delimited"
-              DTS:ColumnDelimiter="_x002C_"
-              DTS:DataType="7"
-              DTS:TextQualified="True"
-              DTS:ObjectName="month"
-              DTS:DTSID="{F3400913-7E98-495F-964F-42320E08D288}"
-              DTS:CreationName="" />
-            <DTS:FlatFileColumn
-              DTS:ColumnType="Delimited"
-              DTS:ColumnDelimiter="_x002C_"
-              DTS:DataType="4"
-              DTS:TextQualified="True"
-              DTS:ObjectName="location latitude"
-              DTS:DTSID="{B09F7FB8-3617-4162-8458-CEAD50A0DBF3}"
-              DTS:CreationName="" />
-            <DTS:FlatFileColumn
-              DTS:ColumnType="Delimited"
-              DTS:ColumnDelimiter="_x002C_"
-              DTS:DataType="3"
-              DTS:TextQualified="True"
-              DTS:ObjectName="location street id"
-              DTS:DTSID="{D2E4B81C-CC42-441D-9C0E-A17221B4C3AF}"
-              DTS:CreationName="" />
-            <DTS:FlatFileColumn
-              DTS:ColumnType="Delimited"
-              DTS:ColumnDelimiter="_x002C_"
-              DTS:MaximumWidth="46"
-              DTS:DataType="129"
-              DTS:TextQualified="True"
-              DTS:ObjectName="location street name"
-              DTS:DTSID="{67126BD7-1741-49D8-AC3D-32318D47F570}"
-              DTS:CreationName="" />
-            <DTS:FlatFileColumn
-              DTS:ColumnType="Delimited"
-              DTS:ColumnDelimiter="_x002C_"
-              DTS:DataType="4"
-              DTS:TextQualified="True"
-              DTS:ObjectName="location longitude"
-              DTS:DTSID="{A495438B-0C95-490C-BBF0-C2E808072537}"
-              DTS:CreationName="" />
-            <DTS:FlatFileColumn
-              DTS:ColumnType="Delimited"
-              DTS:ColumnDelimiter="_x002C_"
-              DTS:MaximumWidth="45"
-              DTS:DataType="129"
-              DTS:TextQualified="True"
-              DTS:ObjectName="outcome_status category"
-              DTS:DTSID="{2DA41021-ACAC-47E4-9DC1-497A431544DD}"
-              DTS:CreationName="" />
-            <DTS:FlatFileColumn
-              DTS:ColumnType="Delimited"
-              DTS:ColumnDelimiter="_x000D__x000A_"
-              DTS:DataType="7"
-              DTS:TextQualified="True"
-              DTS:ObjectName="outcome_status date"
-              DTS:DTSID="{387CB7AC-77B6-441F-9F90-488D29924387}"
-              DTS:CreationName="" />
-          </DTS:FlatFileColumns>
-        </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
   </DTS:ConnectionManagers>
@@ -383,24 +33,24 @@
       DTS:refId="Package\DimCrimeCategory Insertion"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
-      DTS:DTSID="{8DFC0468-2C57-4E4C-A344-31E2747942E4}"
+      DTS:DTSID="{db902820-11da-493e-a647-6861cbef0840}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="DimCrimeCategory Insertion"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="0">
+      DTS:ThreadHint="2">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
-          SQLTask:Connection="{60986C51-6ADF-4ABB-8E5E-4E0E999B355C}"
-          SQLTask:SqlStatementSource="/*DimCrimeCategory insertion*/&#xA;&#xA;with DimCrimeCategoryCTE as (&#xA;&#x9;SELECT        Category&#xA;&#x9;FROM          POLICEAPI_STAGING as St&#xA;&#x9;GROUP BY st.Category&#xA;&#x9;&#xA;&#x9;)&#xA;insert into DimCrimeCategory(&#xA;DimCrimeCategory.Category&#xA;)&#xA;select * from DimCrimeCategoryCTE as CTE&#xA;ORDER BY CTE.Category&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          SQLTask:Connection="{B5519516-3A9E-4601-BFFF-0BFBAEFE6A47}"
+          SQLTask:SqlStatementSource="/*DimCrimeCategory insertion*/&#xA;&#xA;with DimCrimeCategoryCTE as (&#xA; SELECT        Category&#xA; FROM          POLICEAPI_STAGING as St&#xA; GROUP BY st.Category&#xA; &#xA; )&#xA;insert into DimCrimeCategory(&#xA;DimCrimeCategory.Category&#xA;)&#xA;select * from DimCrimeCategoryCTE as CTE&#xA;ORDER BY CTE.Category&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
     <DTS:Executable
       DTS:refId="Package\DimCrimeCategory Table"
       DTS:CreationName="Microsoft.Pipeline"
       DTS:Description="Data Flow Task"
-      DTS:DTSID="{ae1ae520-2487-4a02-a868-0825c7100518}"
+      DTS:DTSID="{d70cd24c-fc9f-43d6-ae13-bee60d682a1e}"
       DTS:ExecutableType="Microsoft.Pipeline"
       DTS:LocaleID="-1"
       DTS:ObjectName="DimCrimeCategory Table"
@@ -548,16 +198,16 @@
       DTS:refId="Package\DimLocation Insertion"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
-      DTS:DTSID="{7A8B7F96-C67D-4636-8383-2EC1F989ED90}"
+      DTS:DTSID="{0198deb8-773e-4fdc-8861-0300917e06d4}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="DimLocation Insertion"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="2">
+      DTS:ThreadHint="1">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
-          SQLTask:Connection="{60986C51-6ADF-4ABB-8E5E-4E0E999B355C}"
+          SQLTask:Connection="{B5519516-3A9E-4601-BFFF-0BFBAEFE6A47}"
           SQLTask:SqlStatementSource="/* Query for Dim Location */&#xA;with DimLocationCTE as (&#xA;SELECT &#xA;[location.street.id],&#xA;Location_type,&#xA;location_subtype,&#xA;[location.street.name],&#xA;[location.longitude],&#xA;[location.latitude]&#xA;&#xA;from [PoliceAPI].[dbo].[POLICEAPI_STAGING]&#xA;&#xA;Group by [location.street.id], Location_type, location_subtype,[location.street.name],[location.longitude],[location.latitude]&#xA;&#xA;)&#xA;insert into [PoliceAPI].[dbo].[DimLocation]&#xA;([location.street.id],&#xA;Location_type,&#xA;location_subtype,&#xA;[location.street.name],&#xA;[location.longitude],&#xA;[location.latitude])&#xA;&#xA;&#xA;select * from DimLocationCTE&#xA;&#xA;&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
@@ -565,7 +215,7 @@
       DTS:refId="Package\DimLocation Table"
       DTS:CreationName="Microsoft.Pipeline"
       DTS:Description="Data Flow Task"
-      DTS:DTSID="{1C3EAB3D-9CEC-40C5-B8F2-8B162B8E1E18}"
+      DTS:DTSID="{740e889b-6c9b-49e1-a66e-8794cba88732}"
       DTS:ExecutableType="Microsoft.Pipeline"
       DTS:LocaleID="-1"
       DTS:ObjectName="DimLocation Table"
@@ -809,7 +459,7 @@
       DTS:refId="Package\DimOutcomeStatus"
       DTS:CreationName="Microsoft.Pipeline"
       DTS:Description="Data Flow Task"
-      DTS:DTSID="{daaf94de-263d-4f8e-bbef-3649990e9a7f}"
+      DTS:DTSID="{790fe6b4-cb0d-40ca-8699-2a2f4d0fee2b}"
       DTS:ExecutableType="Microsoft.Pipeline"
       DTS:LocaleID="-1"
       DTS:ObjectName="DimOutcomeStatus"
@@ -957,24 +607,24 @@
       DTS:refId="Package\DimOutcomeStatus Insertion"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
-      DTS:DTSID="{014BE42E-67FF-4681-AC1E-4123806E6EAA}"
+      DTS:DTSID="{9ec87d6b-e165-4961-9f64-9ac5e7206358}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="DimOutcomeStatus Insertion"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="1">
+      DTS:ThreadHint="0">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
-          SQLTask:Connection="{60986C51-6ADF-4ABB-8E5E-4E0E999B355C}"
-          SQLTask:SqlStatementSource="/*DimOutcomeStatus*/&#xA;with DimOutcomeStatusCTE as (&#xA;&#x9;SELECT        [outcome_status.category]&#xA;&#x9;FROM            POLICEAPI_STAGING&#xA;&#x9;GROUP BY [outcome_status.category]&#xA;&#x9;&#xA;&#x9;)&#xA;&#xA;insert into DimOutcomeStatus(&#xA;OutcomeStatusCategory&#xA;)&#xA;select * from DimOutcomeStatusCTE&#xA;ORDER BY DimOutcomeStatusCTE.[outcome_status.category]&#xA;&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          SQLTask:Connection="{B5519516-3A9E-4601-BFFF-0BFBAEFE6A47}"
+          SQLTask:SqlStatementSource="/*DimOutcomeStatus*/&#xA;with DimOutcomeStatusCTE as (&#xA; SELECT        [outcome_status.category]&#xA; FROM            POLICEAPI_STAGING&#xA; GROUP BY [outcome_status.category]&#xA; &#xA; )&#xA;&#xA;insert into DimOutcomeStatus(&#xA;OutcomeStatusCategory&#xA;)&#xA;select * from DimOutcomeStatusCTE&#xA;ORDER BY DimOutcomeStatusCTE.[outcome_status.category]&#xA;&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
     <DTS:Executable
       DTS:refId="Package\FactCrime Insertion"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
-      DTS:DTSID="{051f55cc-88d9-4f9a-86e4-bd556c1df4b2}"
+      DTS:DTSID="{f32a6482-fda4-43b1-8b41-f4a0fc0a4958}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="FactCrime Insertion"
@@ -983,18 +633,18 @@
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
-          SQLTask:Connection="{60986C51-6ADF-4ABB-8E5E-4E0E999B355C}"
-          SQLTask:SqlStatementSource="/* Fact Crime Insertion */&#xA;&#xA;with FactCrimeCTE as (&#xA; select &#xA; DCC.[Category ID],&#xA; context,&#xA; DOS.OutcomeStatusID,&#xA; cast(concat(trim([outcome_status.date]),'-01')as date) as Outcome_status_date,&#xA; [location.street.id],&#xA; cast(concat(trim(month),'-01')as date) as Crime_Date&#xA; from POLICEAPI_STAGING as st&#xA; inner join DimCrimeCategory as DCC on (DCC.Category = st.Category)&#xA; inner join DimOutcomeStatus as DOS on (DOS.OutcomeStatusCategory = st.[outcome_status.category])&#xA; )&#xA;&#xA;insert into FactSales(&#xA;[Category ID] ,&#xA;[context] ,&#xA;[OutcomeStatusID],&#xA;[outcome_status.date],&#xA;[location.street.id],&#xA;Crime_Date)&#xA;&#xA;select * from FactCrimeCTE&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          SQLTask:Connection="{B5519516-3A9E-4601-BFFF-0BFBAEFE6A47}"
+          SQLTask:SqlStatementSource="/* Fact Crime Insertion */&#xA;&#xA;with FactCrimeCTE as (&#xA; select &#xA; DCC.[Category ID],&#xA; context,&#xA; DOS.OutcomeStatusID,&#xA; cast(concat(trim([outcome_status.date]),'-01')as date) as Outcome_status_date,&#xA; [location.street.id],&#xA; cast(concat(trim(month),'-01')as date) as Crime_Date&#xA; from POLICEAPI_STAGING as st&#xA; inner join DimCrimeCategory as DCC on (DCC.Category = st.Category)&#xA; inner join DimOutcomeStatus as DOS on (DOS.OutcomeStatusCategory = st.[outcome_status.category])&#xA; )&#xA;&#xA;insert into FactCrime(&#xA;[Category ID] ,&#xA;[context] ,&#xA;[OutcomeStatusID],&#xA;[outcome_status.date],&#xA;[location.street.id],&#xA;Crime_Date)&#xA;&#xA;select * from FactCrimeCTE&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
     <DTS:Executable
-      DTS:refId="Package\FactSales Table"
+      DTS:refId="Package\FactCrime Table"
       DTS:CreationName="Microsoft.Pipeline"
       DTS:Description="Data Flow Task"
-      DTS:DTSID="{77181e81-e427-41fc-a348-b146ca6ef782}"
+      DTS:DTSID="{1bf2d897-bb37-4369-bf6a-3bfc984d4a3c}"
       DTS:ExecutableType="Microsoft.Pipeline"
       DTS:LocaleID="-1"
-      DTS:ObjectName="FactSales Table"
+      DTS:ObjectName="FactCrime Table"
       DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
       <DTS:Variables />
       <DTS:ObjectData>
@@ -1002,11 +652,11 @@
           version="1">
           <components>
             <component
-              refId="Package\FactSales Table\FactSales Table"
+              refId="Package\FactCrime Table\FactCrime Table"
               componentClassID="Microsoft.OLEDBSource"
               contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
               description="OLE DB Source"
-              name="FactSales Table"
+              name="FactCrime Table"
               usesDispositions="true"
               version="7">
               <properties>
@@ -1017,7 +667,7 @@
                 <property
                   dataType="System.String"
                   description="Specifies the name of the database object used to open a rowset."
-                  name="OpenRowset">[dbo].[FactSales]</property>
+                  name="OpenRowset">[dbo].[FactCrime]</property>
                 <property
                   dataType="System.String"
                   description="Specifies the variable that contains the name of the database object used to open a rowset."
@@ -1051,7 +701,7 @@
               </properties>
               <connections>
                 <connection
-                  refId="Package\FactSales Table\FactSales Table.Connections[OleDbConnection]"
+                  refId="Package\FactCrime Table\FactCrime Table.Connections[OleDbConnection]"
                   connectionManagerID="Package.ConnectionManagers[BASED.PoliceAPI]"
                   connectionManagerRefId="Package.ConnectionManagers[BASED.PoliceAPI]"
                   description="The OLE DB runtime connection used to access the database."
@@ -1059,167 +709,167 @@
               </connections>
               <outputs>
                 <output
-                  refId="Package\FactSales Table\FactSales Table.Outputs[OLE DB Source Output]"
+                  refId="Package\FactCrime Table\FactCrime Table.Outputs[OLE DB Source Output]"
                   name="OLE DB Source Output">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\FactSales Table\FactSales Table.Outputs[OLE DB Source Output].Columns[location.street.id]"
+                      refId="Package\FactCrime Table\FactCrime Table.Outputs[OLE DB Source Output].Columns[location.street.id]"
                       dataType="i4"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\FactSales Table\FactSales Table.Outputs[OLE DB Source Output].ExternalColumns[location.street.id]"
-                      lineageId="Package\FactSales Table\FactSales Table.Outputs[OLE DB Source Output].Columns[location.street.id]"
+                      externalMetadataColumnId="Package\FactCrime Table\FactCrime Table.Outputs[OLE DB Source Output].ExternalColumns[location.street.id]"
+                      lineageId="Package\FactCrime Table\FactCrime Table.Outputs[OLE DB Source Output].Columns[location.street.id]"
                       name="location.street.id"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\FactSales Table\FactSales Table.Outputs[OLE DB Source Output].Columns[ID]"
+                      refId="Package\FactCrime Table\FactCrime Table.Outputs[OLE DB Source Output].Columns[ID]"
                       dataType="i4"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\FactSales Table\FactSales Table.Outputs[OLE DB Source Output].ExternalColumns[ID]"
-                      lineageId="Package\FactSales Table\FactSales Table.Outputs[OLE DB Source Output].Columns[ID]"
+                      externalMetadataColumnId="Package\FactCrime Table\FactCrime Table.Outputs[OLE DB Source Output].ExternalColumns[ID]"
+                      lineageId="Package\FactCrime Table\FactCrime Table.Outputs[OLE DB Source Output].Columns[ID]"
                       name="ID"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\FactSales Table\FactSales Table.Outputs[OLE DB Source Output].Columns[Category ID]"
+                      refId="Package\FactCrime Table\FactCrime Table.Outputs[OLE DB Source Output].Columns[Category ID]"
                       codePage="1252"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\FactSales Table\FactSales Table.Outputs[OLE DB Source Output].ExternalColumns[Category ID]"
+                      externalMetadataColumnId="Package\FactCrime Table\FactCrime Table.Outputs[OLE DB Source Output].ExternalColumns[Category ID]"
                       length="50"
-                      lineageId="Package\FactSales Table\FactSales Table.Outputs[OLE DB Source Output].Columns[Category ID]"
+                      lineageId="Package\FactCrime Table\FactCrime Table.Outputs[OLE DB Source Output].Columns[Category ID]"
                       name="Category ID"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\FactSales Table\FactSales Table.Outputs[OLE DB Source Output].Columns[context]"
+                      refId="Package\FactCrime Table\FactCrime Table.Outputs[OLE DB Source Output].Columns[context]"
                       codePage="1252"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\FactSales Table\FactSales Table.Outputs[OLE DB Source Output].ExternalColumns[context]"
+                      externalMetadataColumnId="Package\FactCrime Table\FactCrime Table.Outputs[OLE DB Source Output].ExternalColumns[context]"
                       length="50"
-                      lineageId="Package\FactSales Table\FactSales Table.Outputs[OLE DB Source Output].Columns[context]"
+                      lineageId="Package\FactCrime Table\FactCrime Table.Outputs[OLE DB Source Output].Columns[context]"
                       name="context"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\FactSales Table\FactSales Table.Outputs[OLE DB Source Output].Columns[OutcomeStatusID]"
+                      refId="Package\FactCrime Table\FactCrime Table.Outputs[OLE DB Source Output].Columns[OutcomeStatusID]"
                       dataType="i4"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\FactSales Table\FactSales Table.Outputs[OLE DB Source Output].ExternalColumns[OutcomeStatusID]"
-                      lineageId="Package\FactSales Table\FactSales Table.Outputs[OLE DB Source Output].Columns[OutcomeStatusID]"
+                      externalMetadataColumnId="Package\FactCrime Table\FactCrime Table.Outputs[OLE DB Source Output].ExternalColumns[OutcomeStatusID]"
+                      lineageId="Package\FactCrime Table\FactCrime Table.Outputs[OLE DB Source Output].Columns[OutcomeStatusID]"
                       name="OutcomeStatusID"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\FactSales Table\FactSales Table.Outputs[OLE DB Source Output].Columns[outcome_status.date]"
+                      refId="Package\FactCrime Table\FactCrime Table.Outputs[OLE DB Source Output].Columns[outcome_status.date]"
                       dataType="dbDate"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\FactSales Table\FactSales Table.Outputs[OLE DB Source Output].ExternalColumns[outcome_status.date]"
-                      lineageId="Package\FactSales Table\FactSales Table.Outputs[OLE DB Source Output].Columns[outcome_status.date]"
+                      externalMetadataColumnId="Package\FactCrime Table\FactCrime Table.Outputs[OLE DB Source Output].ExternalColumns[outcome_status.date]"
+                      lineageId="Package\FactCrime Table\FactCrime Table.Outputs[OLE DB Source Output].Columns[outcome_status.date]"
                       name="outcome_status.date"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\FactSales Table\FactSales Table.Outputs[OLE DB Source Output].Columns[Crime_Date]"
+                      refId="Package\FactCrime Table\FactCrime Table.Outputs[OLE DB Source Output].Columns[Crime_Date]"
                       dataType="dbDate"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\FactSales Table\FactSales Table.Outputs[OLE DB Source Output].ExternalColumns[Crime_Date]"
-                      lineageId="Package\FactSales Table\FactSales Table.Outputs[OLE DB Source Output].Columns[Crime_Date]"
+                      externalMetadataColumnId="Package\FactCrime Table\FactCrime Table.Outputs[OLE DB Source Output].ExternalColumns[Crime_Date]"
+                      lineageId="Package\FactCrime Table\FactCrime Table.Outputs[OLE DB Source Output].Columns[Crime_Date]"
                       name="Crime_Date"
                       truncationRowDisposition="FailComponent" />
                   </outputColumns>
                   <externalMetadataColumns
                     isUsed="True">
                     <externalMetadataColumn
-                      refId="Package\FactSales Table\FactSales Table.Outputs[OLE DB Source Output].ExternalColumns[location.street.id]"
+                      refId="Package\FactCrime Table\FactCrime Table.Outputs[OLE DB Source Output].ExternalColumns[location.street.id]"
                       dataType="i4"
                       name="location.street.id" />
                     <externalMetadataColumn
-                      refId="Package\FactSales Table\FactSales Table.Outputs[OLE DB Source Output].ExternalColumns[ID]"
+                      refId="Package\FactCrime Table\FactCrime Table.Outputs[OLE DB Source Output].ExternalColumns[ID]"
                       dataType="i4"
                       name="ID" />
                     <externalMetadataColumn
-                      refId="Package\FactSales Table\FactSales Table.Outputs[OLE DB Source Output].ExternalColumns[Category ID]"
+                      refId="Package\FactCrime Table\FactCrime Table.Outputs[OLE DB Source Output].ExternalColumns[Category ID]"
                       codePage="1252"
                       dataType="str"
                       length="50"
                       name="Category ID" />
                     <externalMetadataColumn
-                      refId="Package\FactSales Table\FactSales Table.Outputs[OLE DB Source Output].ExternalColumns[context]"
+                      refId="Package\FactCrime Table\FactCrime Table.Outputs[OLE DB Source Output].ExternalColumns[context]"
                       codePage="1252"
                       dataType="str"
                       length="50"
                       name="context" />
                     <externalMetadataColumn
-                      refId="Package\FactSales Table\FactSales Table.Outputs[OLE DB Source Output].ExternalColumns[OutcomeStatusID]"
+                      refId="Package\FactCrime Table\FactCrime Table.Outputs[OLE DB Source Output].ExternalColumns[OutcomeStatusID]"
                       dataType="i4"
                       name="OutcomeStatusID" />
                     <externalMetadataColumn
-                      refId="Package\FactSales Table\FactSales Table.Outputs[OLE DB Source Output].ExternalColumns[outcome_status.date]"
+                      refId="Package\FactCrime Table\FactCrime Table.Outputs[OLE DB Source Output].ExternalColumns[outcome_status.date]"
                       dataType="dbDate"
                       name="outcome_status.date" />
                     <externalMetadataColumn
-                      refId="Package\FactSales Table\FactSales Table.Outputs[OLE DB Source Output].ExternalColumns[Crime_Date]"
+                      refId="Package\FactCrime Table\FactCrime Table.Outputs[OLE DB Source Output].ExternalColumns[Crime_Date]"
                       dataType="dbDate"
                       name="Crime_Date" />
                   </externalMetadataColumns>
                 </output>
                 <output
-                  refId="Package\FactSales Table\FactSales Table.Outputs[OLE DB Source Error Output]"
+                  refId="Package\FactCrime Table\FactCrime Table.Outputs[OLE DB Source Error Output]"
                   isErrorOut="true"
                   name="OLE DB Source Error Output">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\FactSales Table\FactSales Table.Outputs[OLE DB Source Error Output].Columns[ID]"
+                      refId="Package\FactCrime Table\FactCrime Table.Outputs[OLE DB Source Error Output].Columns[ID]"
                       dataType="i4"
-                      lineageId="Package\FactSales Table\FactSales Table.Outputs[OLE DB Source Error Output].Columns[ID]"
+                      lineageId="Package\FactCrime Table\FactCrime Table.Outputs[OLE DB Source Error Output].Columns[ID]"
                       name="ID" />
                     <outputColumn
-                      refId="Package\FactSales Table\FactSales Table.Outputs[OLE DB Source Error Output].Columns[Category ID]"
+                      refId="Package\FactCrime Table\FactCrime Table.Outputs[OLE DB Source Error Output].Columns[Category ID]"
                       codePage="1252"
                       dataType="str"
                       length="50"
-                      lineageId="Package\FactSales Table\FactSales Table.Outputs[OLE DB Source Error Output].Columns[Category ID]"
+                      lineageId="Package\FactCrime Table\FactCrime Table.Outputs[OLE DB Source Error Output].Columns[Category ID]"
                       name="Category ID" />
                     <outputColumn
-                      refId="Package\FactSales Table\FactSales Table.Outputs[OLE DB Source Error Output].Columns[context]"
+                      refId="Package\FactCrime Table\FactCrime Table.Outputs[OLE DB Source Error Output].Columns[context]"
                       codePage="1252"
                       dataType="str"
                       length="50"
-                      lineageId="Package\FactSales Table\FactSales Table.Outputs[OLE DB Source Error Output].Columns[context]"
+                      lineageId="Package\FactCrime Table\FactCrime Table.Outputs[OLE DB Source Error Output].Columns[context]"
                       name="context" />
                     <outputColumn
-                      refId="Package\FactSales Table\FactSales Table.Outputs[OLE DB Source Error Output].Columns[OutcomeStatusID]"
+                      refId="Package\FactCrime Table\FactCrime Table.Outputs[OLE DB Source Error Output].Columns[OutcomeStatusID]"
                       dataType="i4"
-                      lineageId="Package\FactSales Table\FactSales Table.Outputs[OLE DB Source Error Output].Columns[OutcomeStatusID]"
+                      lineageId="Package\FactCrime Table\FactCrime Table.Outputs[OLE DB Source Error Output].Columns[OutcomeStatusID]"
                       name="OutcomeStatusID" />
                     <outputColumn
-                      refId="Package\FactSales Table\FactSales Table.Outputs[OLE DB Source Error Output].Columns[outcome_status.date]"
+                      refId="Package\FactCrime Table\FactCrime Table.Outputs[OLE DB Source Error Output].Columns[outcome_status.date]"
                       dataType="dbDate"
-                      lineageId="Package\FactSales Table\FactSales Table.Outputs[OLE DB Source Error Output].Columns[outcome_status.date]"
+                      lineageId="Package\FactCrime Table\FactCrime Table.Outputs[OLE DB Source Error Output].Columns[outcome_status.date]"
                       name="outcome_status.date" />
                     <outputColumn
-                      refId="Package\FactSales Table\FactSales Table.Outputs[OLE DB Source Error Output].Columns[location.street.id]"
+                      refId="Package\FactCrime Table\FactCrime Table.Outputs[OLE DB Source Error Output].Columns[location.street.id]"
                       dataType="i4"
-                      lineageId="Package\FactSales Table\FactSales Table.Outputs[OLE DB Source Error Output].Columns[location.street.id]"
+                      lineageId="Package\FactCrime Table\FactCrime Table.Outputs[OLE DB Source Error Output].Columns[location.street.id]"
                       name="location.street.id" />
                     <outputColumn
-                      refId="Package\FactSales Table\FactSales Table.Outputs[OLE DB Source Error Output].Columns[Crime_Date]"
+                      refId="Package\FactCrime Table\FactCrime Table.Outputs[OLE DB Source Error Output].Columns[Crime_Date]"
                       dataType="dbDate"
-                      lineageId="Package\FactSales Table\FactSales Table.Outputs[OLE DB Source Error Output].Columns[Crime_Date]"
+                      lineageId="Package\FactCrime Table\FactCrime Table.Outputs[OLE DB Source Error Output].Columns[Crime_Date]"
                       name="Crime_Date" />
                     <outputColumn
-                      refId="Package\FactSales Table\FactSales Table.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      refId="Package\FactCrime Table\FactCrime Table.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
                       dataType="i4"
-                      lineageId="Package\FactSales Table\FactSales Table.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      lineageId="Package\FactCrime Table\FactCrime Table.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
                       name="ErrorCode"
                       specialFlags="1" />
                     <outputColumn
-                      refId="Package\FactSales Table\FactSales Table.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      refId="Package\FactCrime Table\FactCrime Table.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
                       dataType="i4"
-                      lineageId="Package\FactSales Table\FactSales Table.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      lineageId="Package\FactCrime Table\FactCrime Table.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -1232,13 +882,13 @@
       </DTS:ObjectData>
     </DTS:Executable>
     <DTS:Executable
-      DTS:refId="Package\Police Api Staging Source"
+      DTS:refId="Package\Police Api Staging Source for Dim"
       DTS:CreationName="Microsoft.Pipeline"
       DTS:Description="Data Flow Task"
-      DTS:DTSID="{7ADF34CA-4716-489C-A1B8-B689DEF5DD16}"
+      DTS:DTSID="{ce0acb6d-df47-40fb-871a-54c2f6ce596f}"
       DTS:ExecutableType="Microsoft.Pipeline"
       DTS:LocaleID="-1"
-      DTS:ObjectName="Police Api Staging Source"
+      DTS:ObjectName="Police Api Staging Source for Dim"
       DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
       <DTS:Variables />
       <DTS:ObjectData>
@@ -1246,7 +896,7 @@
           version="1">
           <components>
             <component
-              refId="Package\Police Api Staging Source\PoliceAPI Staging"
+              refId="Package\Police Api Staging Source for Dim\PoliceAPI Staging"
               componentClassID="Microsoft.OLEDBSource"
               contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
               description="OLE DB Source"
@@ -1295,7 +945,7 @@
               </properties>
               <connections>
                 <connection
-                  refId="Package\Police Api Staging Source\PoliceAPI Staging.Connections[OleDbConnection]"
+                  refId="Package\Police Api Staging Source for Dim\PoliceAPI Staging.Connections[OleDbConnection]"
                   connectionManagerID="Package.ConnectionManagers[BASED.PoliceAPI]"
                   connectionManagerRefId="Package.ConnectionManagers[BASED.PoliceAPI]"
                   description="The OLE DB runtime connection used to access the database."
@@ -1303,251 +953,251 @@
               </connections>
               <outputs>
                 <output
-                  refId="Package\Police Api Staging Source\PoliceAPI Staging.Outputs[OLE DB Source Output]"
+                  refId="Package\Police Api Staging Source for Dim\PoliceAPI Staging.Outputs[OLE DB Source Output]"
                   name="OLE DB Source Output">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Police Api Staging Source\PoliceAPI Staging.Outputs[OLE DB Source Output].Columns[Index]"
+                      refId="Package\Police Api Staging Source for Dim\PoliceAPI Staging.Outputs[OLE DB Source Output].Columns[Index]"
                       dataType="i4"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Police Api Staging Source\PoliceAPI Staging.Outputs[OLE DB Source Output].ExternalColumns[Index]"
-                      lineageId="Package\Police Api Staging Source\PoliceAPI Staging.Outputs[OLE DB Source Output].Columns[Index]"
+                      externalMetadataColumnId="Package\Police Api Staging Source for Dim\PoliceAPI Staging.Outputs[OLE DB Source Output].ExternalColumns[Index]"
+                      lineageId="Package\Police Api Staging Source for Dim\PoliceAPI Staging.Outputs[OLE DB Source Output].Columns[Index]"
                       name="Index"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Police Api Staging Source\PoliceAPI Staging.Outputs[OLE DB Source Output].Columns[Category]"
+                      refId="Package\Police Api Staging Source for Dim\PoliceAPI Staging.Outputs[OLE DB Source Output].Columns[Category]"
                       codePage="1252"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Police Api Staging Source\PoliceAPI Staging.Outputs[OLE DB Source Output].ExternalColumns[Category]"
+                      externalMetadataColumnId="Package\Police Api Staging Source for Dim\PoliceAPI Staging.Outputs[OLE DB Source Output].ExternalColumns[Category]"
                       length="50"
-                      lineageId="Package\Police Api Staging Source\PoliceAPI Staging.Outputs[OLE DB Source Output].Columns[Category]"
+                      lineageId="Package\Police Api Staging Source for Dim\PoliceAPI Staging.Outputs[OLE DB Source Output].Columns[Category]"
                       name="Category"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Police Api Staging Source\PoliceAPI Staging.Outputs[OLE DB Source Output].Columns[Location_type]"
+                      refId="Package\Police Api Staging Source for Dim\PoliceAPI Staging.Outputs[OLE DB Source Output].Columns[Location_type]"
                       codePage="1252"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Police Api Staging Source\PoliceAPI Staging.Outputs[OLE DB Source Output].ExternalColumns[Location_type]"
+                      externalMetadataColumnId="Package\Police Api Staging Source for Dim\PoliceAPI Staging.Outputs[OLE DB Source Output].ExternalColumns[Location_type]"
                       length="50"
-                      lineageId="Package\Police Api Staging Source\PoliceAPI Staging.Outputs[OLE DB Source Output].Columns[Location_type]"
+                      lineageId="Package\Police Api Staging Source for Dim\PoliceAPI Staging.Outputs[OLE DB Source Output].Columns[Location_type]"
                       name="Location_type"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Police Api Staging Source\PoliceAPI Staging.Outputs[OLE DB Source Output].Columns[context]"
+                      refId="Package\Police Api Staging Source for Dim\PoliceAPI Staging.Outputs[OLE DB Source Output].Columns[context]"
                       codePage="1252"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Police Api Staging Source\PoliceAPI Staging.Outputs[OLE DB Source Output].ExternalColumns[context]"
+                      externalMetadataColumnId="Package\Police Api Staging Source for Dim\PoliceAPI Staging.Outputs[OLE DB Source Output].ExternalColumns[context]"
                       length="50"
-                      lineageId="Package\Police Api Staging Source\PoliceAPI Staging.Outputs[OLE DB Source Output].Columns[context]"
+                      lineageId="Package\Police Api Staging Source for Dim\PoliceAPI Staging.Outputs[OLE DB Source Output].Columns[context]"
                       name="context"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Police Api Staging Source\PoliceAPI Staging.Outputs[OLE DB Source Output].Columns[outcome_status]"
+                      refId="Package\Police Api Staging Source for Dim\PoliceAPI Staging.Outputs[OLE DB Source Output].Columns[outcome_status]"
                       codePage="1252"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Police Api Staging Source\PoliceAPI Staging.Outputs[OLE DB Source Output].ExternalColumns[outcome_status]"
+                      externalMetadataColumnId="Package\Police Api Staging Source for Dim\PoliceAPI Staging.Outputs[OLE DB Source Output].ExternalColumns[outcome_status]"
                       length="50"
-                      lineageId="Package\Police Api Staging Source\PoliceAPI Staging.Outputs[OLE DB Source Output].Columns[outcome_status]"
+                      lineageId="Package\Police Api Staging Source for Dim\PoliceAPI Staging.Outputs[OLE DB Source Output].Columns[outcome_status]"
                       name="outcome_status"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Police Api Staging Source\PoliceAPI Staging.Outputs[OLE DB Source Output].Columns[persistent_id]"
+                      refId="Package\Police Api Staging Source for Dim\PoliceAPI Staging.Outputs[OLE DB Source Output].Columns[persistent_id]"
                       codePage="1252"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Police Api Staging Source\PoliceAPI Staging.Outputs[OLE DB Source Output].ExternalColumns[persistent_id]"
+                      externalMetadataColumnId="Package\Police Api Staging Source for Dim\PoliceAPI Staging.Outputs[OLE DB Source Output].ExternalColumns[persistent_id]"
                       length="225"
-                      lineageId="Package\Police Api Staging Source\PoliceAPI Staging.Outputs[OLE DB Source Output].Columns[persistent_id]"
+                      lineageId="Package\Police Api Staging Source for Dim\PoliceAPI Staging.Outputs[OLE DB Source Output].Columns[persistent_id]"
                       name="persistent_id"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Police Api Staging Source\PoliceAPI Staging.Outputs[OLE DB Source Output].Columns[id]"
+                      refId="Package\Police Api Staging Source for Dim\PoliceAPI Staging.Outputs[OLE DB Source Output].Columns[id]"
                       dataType="i4"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Police Api Staging Source\PoliceAPI Staging.Outputs[OLE DB Source Output].ExternalColumns[id]"
-                      lineageId="Package\Police Api Staging Source\PoliceAPI Staging.Outputs[OLE DB Source Output].Columns[id]"
+                      externalMetadataColumnId="Package\Police Api Staging Source for Dim\PoliceAPI Staging.Outputs[OLE DB Source Output].ExternalColumns[id]"
+                      lineageId="Package\Police Api Staging Source for Dim\PoliceAPI Staging.Outputs[OLE DB Source Output].Columns[id]"
                       name="id"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Police Api Staging Source\PoliceAPI Staging.Outputs[OLE DB Source Output].Columns[location_subtype]"
+                      refId="Package\Police Api Staging Source for Dim\PoliceAPI Staging.Outputs[OLE DB Source Output].Columns[location_subtype]"
                       codePage="1252"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Police Api Staging Source\PoliceAPI Staging.Outputs[OLE DB Source Output].ExternalColumns[location_subtype]"
+                      externalMetadataColumnId="Package\Police Api Staging Source for Dim\PoliceAPI Staging.Outputs[OLE DB Source Output].ExternalColumns[location_subtype]"
                       length="30"
-                      lineageId="Package\Police Api Staging Source\PoliceAPI Staging.Outputs[OLE DB Source Output].Columns[location_subtype]"
+                      lineageId="Package\Police Api Staging Source for Dim\PoliceAPI Staging.Outputs[OLE DB Source Output].Columns[location_subtype]"
                       name="location_subtype"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Police Api Staging Source\PoliceAPI Staging.Outputs[OLE DB Source Output].Columns[month]"
+                      refId="Package\Police Api Staging Source for Dim\PoliceAPI Staging.Outputs[OLE DB Source Output].Columns[month]"
                       codePage="1252"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Police Api Staging Source\PoliceAPI Staging.Outputs[OLE DB Source Output].ExternalColumns[month]"
+                      externalMetadataColumnId="Package\Police Api Staging Source for Dim\PoliceAPI Staging.Outputs[OLE DB Source Output].ExternalColumns[month]"
                       length="30"
-                      lineageId="Package\Police Api Staging Source\PoliceAPI Staging.Outputs[OLE DB Source Output].Columns[month]"
+                      lineageId="Package\Police Api Staging Source for Dim\PoliceAPI Staging.Outputs[OLE DB Source Output].Columns[month]"
                       name="month"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Police Api Staging Source\PoliceAPI Staging.Outputs[OLE DB Source Output].Columns[location.latitude]"
+                      refId="Package\Police Api Staging Source for Dim\PoliceAPI Staging.Outputs[OLE DB Source Output].Columns[location.latitude]"
                       dataType="numeric"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Police Api Staging Source\PoliceAPI Staging.Outputs[OLE DB Source Output].ExternalColumns[location.latitude]"
-                      lineageId="Package\Police Api Staging Source\PoliceAPI Staging.Outputs[OLE DB Source Output].Columns[location.latitude]"
+                      externalMetadataColumnId="Package\Police Api Staging Source for Dim\PoliceAPI Staging.Outputs[OLE DB Source Output].ExternalColumns[location.latitude]"
+                      lineageId="Package\Police Api Staging Source for Dim\PoliceAPI Staging.Outputs[OLE DB Source Output].Columns[location.latitude]"
                       name="location.latitude"
                       precision="8"
                       scale="6"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Police Api Staging Source\PoliceAPI Staging.Outputs[OLE DB Source Output].Columns[location.street.id]"
+                      refId="Package\Police Api Staging Source for Dim\PoliceAPI Staging.Outputs[OLE DB Source Output].Columns[location.street.id]"
                       dataType="i4"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Police Api Staging Source\PoliceAPI Staging.Outputs[OLE DB Source Output].ExternalColumns[location.street.id]"
-                      lineageId="Package\Police Api Staging Source\PoliceAPI Staging.Outputs[OLE DB Source Output].Columns[location.street.id]"
+                      externalMetadataColumnId="Package\Police Api Staging Source for Dim\PoliceAPI Staging.Outputs[OLE DB Source Output].ExternalColumns[location.street.id]"
+                      lineageId="Package\Police Api Staging Source for Dim\PoliceAPI Staging.Outputs[OLE DB Source Output].Columns[location.street.id]"
                       name="location.street.id"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Police Api Staging Source\PoliceAPI Staging.Outputs[OLE DB Source Output].Columns[location.street.name]"
+                      refId="Package\Police Api Staging Source for Dim\PoliceAPI Staging.Outputs[OLE DB Source Output].Columns[location.street.name]"
                       codePage="1252"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Police Api Staging Source\PoliceAPI Staging.Outputs[OLE DB Source Output].ExternalColumns[location.street.name]"
+                      externalMetadataColumnId="Package\Police Api Staging Source for Dim\PoliceAPI Staging.Outputs[OLE DB Source Output].ExternalColumns[location.street.name]"
                       length="50"
-                      lineageId="Package\Police Api Staging Source\PoliceAPI Staging.Outputs[OLE DB Source Output].Columns[location.street.name]"
+                      lineageId="Package\Police Api Staging Source for Dim\PoliceAPI Staging.Outputs[OLE DB Source Output].Columns[location.street.name]"
                       name="location.street.name"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Police Api Staging Source\PoliceAPI Staging.Outputs[OLE DB Source Output].Columns[location.longitude]"
+                      refId="Package\Police Api Staging Source for Dim\PoliceAPI Staging.Outputs[OLE DB Source Output].Columns[location.longitude]"
                       dataType="numeric"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Police Api Staging Source\PoliceAPI Staging.Outputs[OLE DB Source Output].ExternalColumns[location.longitude]"
-                      lineageId="Package\Police Api Staging Source\PoliceAPI Staging.Outputs[OLE DB Source Output].Columns[location.longitude]"
+                      externalMetadataColumnId="Package\Police Api Staging Source for Dim\PoliceAPI Staging.Outputs[OLE DB Source Output].ExternalColumns[location.longitude]"
+                      lineageId="Package\Police Api Staging Source for Dim\PoliceAPI Staging.Outputs[OLE DB Source Output].Columns[location.longitude]"
                       name="location.longitude"
                       precision="9"
                       scale="6"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Police Api Staging Source\PoliceAPI Staging.Outputs[OLE DB Source Output].Columns[outcome_status.category]"
+                      refId="Package\Police Api Staging Source for Dim\PoliceAPI Staging.Outputs[OLE DB Source Output].Columns[outcome_status.category]"
                       codePage="1252"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Police Api Staging Source\PoliceAPI Staging.Outputs[OLE DB Source Output].ExternalColumns[outcome_status.category]"
+                      externalMetadataColumnId="Package\Police Api Staging Source for Dim\PoliceAPI Staging.Outputs[OLE DB Source Output].ExternalColumns[outcome_status.category]"
                       length="225"
-                      lineageId="Package\Police Api Staging Source\PoliceAPI Staging.Outputs[OLE DB Source Output].Columns[outcome_status.category]"
+                      lineageId="Package\Police Api Staging Source for Dim\PoliceAPI Staging.Outputs[OLE DB Source Output].Columns[outcome_status.category]"
                       name="outcome_status.category"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Police Api Staging Source\PoliceAPI Staging.Outputs[OLE DB Source Output].Columns[outcome_status.date]"
+                      refId="Package\Police Api Staging Source for Dim\PoliceAPI Staging.Outputs[OLE DB Source Output].Columns[outcome_status.date]"
                       codePage="1252"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Police Api Staging Source\PoliceAPI Staging.Outputs[OLE DB Source Output].ExternalColumns[outcome_status.date]"
+                      externalMetadataColumnId="Package\Police Api Staging Source for Dim\PoliceAPI Staging.Outputs[OLE DB Source Output].ExternalColumns[outcome_status.date]"
                       length="30"
-                      lineageId="Package\Police Api Staging Source\PoliceAPI Staging.Outputs[OLE DB Source Output].Columns[outcome_status.date]"
+                      lineageId="Package\Police Api Staging Source for Dim\PoliceAPI Staging.Outputs[OLE DB Source Output].Columns[outcome_status.date]"
                       name="outcome_status.date"
                       truncationRowDisposition="FailComponent" />
                   </outputColumns>
                   <externalMetadataColumns
                     isUsed="True">
                     <externalMetadataColumn
-                      refId="Package\Police Api Staging Source\PoliceAPI Staging.Outputs[OLE DB Source Output].ExternalColumns[Index]"
+                      refId="Package\Police Api Staging Source for Dim\PoliceAPI Staging.Outputs[OLE DB Source Output].ExternalColumns[Index]"
                       dataType="i4"
                       name="Index" />
                     <externalMetadataColumn
-                      refId="Package\Police Api Staging Source\PoliceAPI Staging.Outputs[OLE DB Source Output].ExternalColumns[Category]"
+                      refId="Package\Police Api Staging Source for Dim\PoliceAPI Staging.Outputs[OLE DB Source Output].ExternalColumns[Category]"
                       codePage="1252"
                       dataType="str"
                       length="50"
                       name="Category" />
                     <externalMetadataColumn
-                      refId="Package\Police Api Staging Source\PoliceAPI Staging.Outputs[OLE DB Source Output].ExternalColumns[Location_type]"
+                      refId="Package\Police Api Staging Source for Dim\PoliceAPI Staging.Outputs[OLE DB Source Output].ExternalColumns[Location_type]"
                       codePage="1252"
                       dataType="str"
                       length="50"
                       name="Location_type" />
                     <externalMetadataColumn
-                      refId="Package\Police Api Staging Source\PoliceAPI Staging.Outputs[OLE DB Source Output].ExternalColumns[context]"
+                      refId="Package\Police Api Staging Source for Dim\PoliceAPI Staging.Outputs[OLE DB Source Output].ExternalColumns[context]"
                       codePage="1252"
                       dataType="str"
                       length="50"
                       name="context" />
                     <externalMetadataColumn
-                      refId="Package\Police Api Staging Source\PoliceAPI Staging.Outputs[OLE DB Source Output].ExternalColumns[outcome_status]"
+                      refId="Package\Police Api Staging Source for Dim\PoliceAPI Staging.Outputs[OLE DB Source Output].ExternalColumns[outcome_status]"
                       codePage="1252"
                       dataType="str"
                       length="50"
                       name="outcome_status" />
                     <externalMetadataColumn
-                      refId="Package\Police Api Staging Source\PoliceAPI Staging.Outputs[OLE DB Source Output].ExternalColumns[persistent_id]"
+                      refId="Package\Police Api Staging Source for Dim\PoliceAPI Staging.Outputs[OLE DB Source Output].ExternalColumns[persistent_id]"
                       codePage="1252"
                       dataType="str"
                       length="225"
                       name="persistent_id" />
                     <externalMetadataColumn
-                      refId="Package\Police Api Staging Source\PoliceAPI Staging.Outputs[OLE DB Source Output].ExternalColumns[id]"
+                      refId="Package\Police Api Staging Source for Dim\PoliceAPI Staging.Outputs[OLE DB Source Output].ExternalColumns[id]"
                       dataType="i4"
                       name="id" />
                     <externalMetadataColumn
-                      refId="Package\Police Api Staging Source\PoliceAPI Staging.Outputs[OLE DB Source Output].ExternalColumns[location_subtype]"
+                      refId="Package\Police Api Staging Source for Dim\PoliceAPI Staging.Outputs[OLE DB Source Output].ExternalColumns[location_subtype]"
                       codePage="1252"
                       dataType="str"
                       length="30"
                       name="location_subtype" />
                     <externalMetadataColumn
-                      refId="Package\Police Api Staging Source\PoliceAPI Staging.Outputs[OLE DB Source Output].ExternalColumns[month]"
+                      refId="Package\Police Api Staging Source for Dim\PoliceAPI Staging.Outputs[OLE DB Source Output].ExternalColumns[month]"
                       codePage="1252"
                       dataType="str"
                       length="30"
                       name="month" />
                     <externalMetadataColumn
-                      refId="Package\Police Api Staging Source\PoliceAPI Staging.Outputs[OLE DB Source Output].ExternalColumns[location.latitude]"
+                      refId="Package\Police Api Staging Source for Dim\PoliceAPI Staging.Outputs[OLE DB Source Output].ExternalColumns[location.latitude]"
                       dataType="numeric"
                       name="location.latitude"
                       precision="8"
                       scale="6" />
                     <externalMetadataColumn
-                      refId="Package\Police Api Staging Source\PoliceAPI Staging.Outputs[OLE DB Source Output].ExternalColumns[location.street.id]"
+                      refId="Package\Police Api Staging Source for Dim\PoliceAPI Staging.Outputs[OLE DB Source Output].ExternalColumns[location.street.id]"
                       dataType="i4"
                       name="location.street.id" />
                     <externalMetadataColumn
-                      refId="Package\Police Api Staging Source\PoliceAPI Staging.Outputs[OLE DB Source Output].ExternalColumns[location.street.name]"
+                      refId="Package\Police Api Staging Source for Dim\PoliceAPI Staging.Outputs[OLE DB Source Output].ExternalColumns[location.street.name]"
                       codePage="1252"
                       dataType="str"
                       length="50"
                       name="location.street.name" />
                     <externalMetadataColumn
-                      refId="Package\Police Api Staging Source\PoliceAPI Staging.Outputs[OLE DB Source Output].ExternalColumns[location.longitude]"
+                      refId="Package\Police Api Staging Source for Dim\PoliceAPI Staging.Outputs[OLE DB Source Output].ExternalColumns[location.longitude]"
                       dataType="numeric"
                       name="location.longitude"
                       precision="9"
                       scale="6" />
                     <externalMetadataColumn
-                      refId="Package\Police Api Staging Source\PoliceAPI Staging.Outputs[OLE DB Source Output].ExternalColumns[outcome_status.category]"
+                      refId="Package\Police Api Staging Source for Dim\PoliceAPI Staging.Outputs[OLE DB Source Output].ExternalColumns[outcome_status.category]"
                       codePage="1252"
                       dataType="str"
                       length="225"
                       name="outcome_status.category" />
                     <externalMetadataColumn
-                      refId="Package\Police Api Staging Source\PoliceAPI Staging.Outputs[OLE DB Source Output].ExternalColumns[outcome_status.date]"
+                      refId="Package\Police Api Staging Source for Dim\PoliceAPI Staging.Outputs[OLE DB Source Output].ExternalColumns[outcome_status.date]"
                       codePage="1252"
                       dataType="str"
                       length="30"
@@ -1555,119 +1205,119 @@
                   </externalMetadataColumns>
                 </output>
                 <output
-                  refId="Package\Police Api Staging Source\PoliceAPI Staging.Outputs[OLE DB Source Error Output]"
+                  refId="Package\Police Api Staging Source for Dim\PoliceAPI Staging.Outputs[OLE DB Source Error Output]"
                   isErrorOut="true"
                   name="OLE DB Source Error Output">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Police Api Staging Source\PoliceAPI Staging.Outputs[OLE DB Source Error Output].Columns[Index]"
+                      refId="Package\Police Api Staging Source for Dim\PoliceAPI Staging.Outputs[OLE DB Source Error Output].Columns[Index]"
                       dataType="i4"
-                      lineageId="Package\Police Api Staging Source\PoliceAPI Staging.Outputs[OLE DB Source Error Output].Columns[Index]"
+                      lineageId="Package\Police Api Staging Source for Dim\PoliceAPI Staging.Outputs[OLE DB Source Error Output].Columns[Index]"
                       name="Index" />
                     <outputColumn
-                      refId="Package\Police Api Staging Source\PoliceAPI Staging.Outputs[OLE DB Source Error Output].Columns[Category]"
+                      refId="Package\Police Api Staging Source for Dim\PoliceAPI Staging.Outputs[OLE DB Source Error Output].Columns[Category]"
                       codePage="1252"
                       dataType="str"
                       length="50"
-                      lineageId="Package\Police Api Staging Source\PoliceAPI Staging.Outputs[OLE DB Source Error Output].Columns[Category]"
+                      lineageId="Package\Police Api Staging Source for Dim\PoliceAPI Staging.Outputs[OLE DB Source Error Output].Columns[Category]"
                       name="Category" />
                     <outputColumn
-                      refId="Package\Police Api Staging Source\PoliceAPI Staging.Outputs[OLE DB Source Error Output].Columns[Location_type]"
+                      refId="Package\Police Api Staging Source for Dim\PoliceAPI Staging.Outputs[OLE DB Source Error Output].Columns[Location_type]"
                       codePage="1252"
                       dataType="str"
                       length="50"
-                      lineageId="Package\Police Api Staging Source\PoliceAPI Staging.Outputs[OLE DB Source Error Output].Columns[Location_type]"
+                      lineageId="Package\Police Api Staging Source for Dim\PoliceAPI Staging.Outputs[OLE DB Source Error Output].Columns[Location_type]"
                       name="Location_type" />
                     <outputColumn
-                      refId="Package\Police Api Staging Source\PoliceAPI Staging.Outputs[OLE DB Source Error Output].Columns[context]"
+                      refId="Package\Police Api Staging Source for Dim\PoliceAPI Staging.Outputs[OLE DB Source Error Output].Columns[context]"
                       codePage="1252"
                       dataType="str"
                       length="50"
-                      lineageId="Package\Police Api Staging Source\PoliceAPI Staging.Outputs[OLE DB Source Error Output].Columns[context]"
+                      lineageId="Package\Police Api Staging Source for Dim\PoliceAPI Staging.Outputs[OLE DB Source Error Output].Columns[context]"
                       name="context" />
                     <outputColumn
-                      refId="Package\Police Api Staging Source\PoliceAPI Staging.Outputs[OLE DB Source Error Output].Columns[outcome_status]"
+                      refId="Package\Police Api Staging Source for Dim\PoliceAPI Staging.Outputs[OLE DB Source Error Output].Columns[outcome_status]"
                       codePage="1252"
                       dataType="str"
                       length="50"
-                      lineageId="Package\Police Api Staging Source\PoliceAPI Staging.Outputs[OLE DB Source Error Output].Columns[outcome_status]"
+                      lineageId="Package\Police Api Staging Source for Dim\PoliceAPI Staging.Outputs[OLE DB Source Error Output].Columns[outcome_status]"
                       name="outcome_status" />
                     <outputColumn
-                      refId="Package\Police Api Staging Source\PoliceAPI Staging.Outputs[OLE DB Source Error Output].Columns[persistent_id]"
+                      refId="Package\Police Api Staging Source for Dim\PoliceAPI Staging.Outputs[OLE DB Source Error Output].Columns[persistent_id]"
                       codePage="1252"
                       dataType="str"
                       length="225"
-                      lineageId="Package\Police Api Staging Source\PoliceAPI Staging.Outputs[OLE DB Source Error Output].Columns[persistent_id]"
+                      lineageId="Package\Police Api Staging Source for Dim\PoliceAPI Staging.Outputs[OLE DB Source Error Output].Columns[persistent_id]"
                       name="persistent_id" />
                     <outputColumn
-                      refId="Package\Police Api Staging Source\PoliceAPI Staging.Outputs[OLE DB Source Error Output].Columns[id]"
+                      refId="Package\Police Api Staging Source for Dim\PoliceAPI Staging.Outputs[OLE DB Source Error Output].Columns[id]"
                       dataType="i4"
-                      lineageId="Package\Police Api Staging Source\PoliceAPI Staging.Outputs[OLE DB Source Error Output].Columns[id]"
+                      lineageId="Package\Police Api Staging Source for Dim\PoliceAPI Staging.Outputs[OLE DB Source Error Output].Columns[id]"
                       name="id" />
                     <outputColumn
-                      refId="Package\Police Api Staging Source\PoliceAPI Staging.Outputs[OLE DB Source Error Output].Columns[location_subtype]"
+                      refId="Package\Police Api Staging Source for Dim\PoliceAPI Staging.Outputs[OLE DB Source Error Output].Columns[location_subtype]"
                       codePage="1252"
                       dataType="str"
                       length="30"
-                      lineageId="Package\Police Api Staging Source\PoliceAPI Staging.Outputs[OLE DB Source Error Output].Columns[location_subtype]"
+                      lineageId="Package\Police Api Staging Source for Dim\PoliceAPI Staging.Outputs[OLE DB Source Error Output].Columns[location_subtype]"
                       name="location_subtype" />
                     <outputColumn
-                      refId="Package\Police Api Staging Source\PoliceAPI Staging.Outputs[OLE DB Source Error Output].Columns[month]"
+                      refId="Package\Police Api Staging Source for Dim\PoliceAPI Staging.Outputs[OLE DB Source Error Output].Columns[month]"
                       codePage="1252"
                       dataType="str"
                       length="30"
-                      lineageId="Package\Police Api Staging Source\PoliceAPI Staging.Outputs[OLE DB Source Error Output].Columns[month]"
+                      lineageId="Package\Police Api Staging Source for Dim\PoliceAPI Staging.Outputs[OLE DB Source Error Output].Columns[month]"
                       name="month" />
                     <outputColumn
-                      refId="Package\Police Api Staging Source\PoliceAPI Staging.Outputs[OLE DB Source Error Output].Columns[location.latitude]"
+                      refId="Package\Police Api Staging Source for Dim\PoliceAPI Staging.Outputs[OLE DB Source Error Output].Columns[location.latitude]"
                       dataType="numeric"
-                      lineageId="Package\Police Api Staging Source\PoliceAPI Staging.Outputs[OLE DB Source Error Output].Columns[location.latitude]"
+                      lineageId="Package\Police Api Staging Source for Dim\PoliceAPI Staging.Outputs[OLE DB Source Error Output].Columns[location.latitude]"
                       name="location.latitude"
                       precision="8"
                       scale="6" />
                     <outputColumn
-                      refId="Package\Police Api Staging Source\PoliceAPI Staging.Outputs[OLE DB Source Error Output].Columns[location.street.id]"
+                      refId="Package\Police Api Staging Source for Dim\PoliceAPI Staging.Outputs[OLE DB Source Error Output].Columns[location.street.id]"
                       dataType="i4"
-                      lineageId="Package\Police Api Staging Source\PoliceAPI Staging.Outputs[OLE DB Source Error Output].Columns[location.street.id]"
+                      lineageId="Package\Police Api Staging Source for Dim\PoliceAPI Staging.Outputs[OLE DB Source Error Output].Columns[location.street.id]"
                       name="location.street.id" />
                     <outputColumn
-                      refId="Package\Police Api Staging Source\PoliceAPI Staging.Outputs[OLE DB Source Error Output].Columns[location.street.name]"
+                      refId="Package\Police Api Staging Source for Dim\PoliceAPI Staging.Outputs[OLE DB Source Error Output].Columns[location.street.name]"
                       codePage="1252"
                       dataType="str"
                       length="50"
-                      lineageId="Package\Police Api Staging Source\PoliceAPI Staging.Outputs[OLE DB Source Error Output].Columns[location.street.name]"
+                      lineageId="Package\Police Api Staging Source for Dim\PoliceAPI Staging.Outputs[OLE DB Source Error Output].Columns[location.street.name]"
                       name="location.street.name" />
                     <outputColumn
-                      refId="Package\Police Api Staging Source\PoliceAPI Staging.Outputs[OLE DB Source Error Output].Columns[location.longitude]"
+                      refId="Package\Police Api Staging Source for Dim\PoliceAPI Staging.Outputs[OLE DB Source Error Output].Columns[location.longitude]"
                       dataType="numeric"
-                      lineageId="Package\Police Api Staging Source\PoliceAPI Staging.Outputs[OLE DB Source Error Output].Columns[location.longitude]"
+                      lineageId="Package\Police Api Staging Source for Dim\PoliceAPI Staging.Outputs[OLE DB Source Error Output].Columns[location.longitude]"
                       name="location.longitude"
                       precision="9"
                       scale="6" />
                     <outputColumn
-                      refId="Package\Police Api Staging Source\PoliceAPI Staging.Outputs[OLE DB Source Error Output].Columns[outcome_status.category]"
+                      refId="Package\Police Api Staging Source for Dim\PoliceAPI Staging.Outputs[OLE DB Source Error Output].Columns[outcome_status.category]"
                       codePage="1252"
                       dataType="str"
                       length="225"
-                      lineageId="Package\Police Api Staging Source\PoliceAPI Staging.Outputs[OLE DB Source Error Output].Columns[outcome_status.category]"
+                      lineageId="Package\Police Api Staging Source for Dim\PoliceAPI Staging.Outputs[OLE DB Source Error Output].Columns[outcome_status.category]"
                       name="outcome_status.category" />
                     <outputColumn
-                      refId="Package\Police Api Staging Source\PoliceAPI Staging.Outputs[OLE DB Source Error Output].Columns[outcome_status.date]"
+                      refId="Package\Police Api Staging Source for Dim\PoliceAPI Staging.Outputs[OLE DB Source Error Output].Columns[outcome_status.date]"
                       codePage="1252"
                       dataType="str"
                       length="30"
-                      lineageId="Package\Police Api Staging Source\PoliceAPI Staging.Outputs[OLE DB Source Error Output].Columns[outcome_status.date]"
+                      lineageId="Package\Police Api Staging Source for Dim\PoliceAPI Staging.Outputs[OLE DB Source Error Output].Columns[outcome_status.date]"
                       name="outcome_status.date" />
                     <outputColumn
-                      refId="Package\Police Api Staging Source\PoliceAPI Staging.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      refId="Package\Police Api Staging Source for Dim\PoliceAPI Staging.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
                       dataType="i4"
-                      lineageId="Package\Police Api Staging Source\PoliceAPI Staging.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      lineageId="Package\Police Api Staging Source for Dim\PoliceAPI Staging.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
                       name="ErrorCode"
                       specialFlags="1" />
                     <outputColumn
-                      refId="Package\Police Api Staging Source\PoliceAPI Staging.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      refId="Package\Police Api Staging Source for Dim\PoliceAPI Staging.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
                       dataType="i4"
-                      lineageId="Package\Police Api Staging Source\PoliceAPI Staging.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      lineageId="Package\Police Api Staging Source for Dim\PoliceAPI Staging.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -1680,13 +1330,13 @@
       </DTS:ObjectData>
     </DTS:Executable>
     <DTS:Executable
-      DTS:refId="Package\Police Api Staging Source 1"
+      DTS:refId="Package\Police Api Staging Source for Fact"
       DTS:CreationName="Microsoft.Pipeline"
       DTS:Description="Data Flow Task"
-      DTS:DTSID="{a2147f59-ed3d-4889-a964-44e0fd365a82}"
+      DTS:DTSID="{50818852-13d2-4d99-a88b-82c668f91c7d}"
       DTS:ExecutableType="Microsoft.Pipeline"
       DTS:LocaleID="-1"
-      DTS:ObjectName="Police Api Staging Source 1"
+      DTS:ObjectName="Police Api Staging Source for Fact"
       DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
       <DTS:Variables />
       <DTS:ObjectData>
@@ -1694,7 +1344,7 @@
           version="1">
           <components>
             <component
-              refId="Package\Police Api Staging Source 1\PoliceAPI Staging"
+              refId="Package\Police Api Staging Source for Fact\PoliceAPI Staging"
               componentClassID="Microsoft.OLEDBSource"
               contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
               description="OLE DB Source"
@@ -1743,7 +1393,7 @@
               </properties>
               <connections>
                 <connection
-                  refId="Package\Police Api Staging Source 1\PoliceAPI Staging.Connections[OleDbConnection]"
+                  refId="Package\Police Api Staging Source for Fact\PoliceAPI Staging.Connections[OleDbConnection]"
                   connectionManagerID="Package.ConnectionManagers[BASED.PoliceAPI]"
                   connectionManagerRefId="Package.ConnectionManagers[BASED.PoliceAPI]"
                   description="The OLE DB runtime connection used to access the database."
@@ -1751,251 +1401,251 @@
               </connections>
               <outputs>
                 <output
-                  refId="Package\Police Api Staging Source 1\PoliceAPI Staging.Outputs[OLE DB Source Output]"
+                  refId="Package\Police Api Staging Source for Fact\PoliceAPI Staging.Outputs[OLE DB Source Output]"
                   name="OLE DB Source Output">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Police Api Staging Source 1\PoliceAPI Staging.Outputs[OLE DB Source Output].Columns[Index]"
+                      refId="Package\Police Api Staging Source for Fact\PoliceAPI Staging.Outputs[OLE DB Source Output].Columns[Index]"
                       dataType="i4"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Police Api Staging Source 1\PoliceAPI Staging.Outputs[OLE DB Source Output].ExternalColumns[Index]"
-                      lineageId="Package\Police Api Staging Source 1\PoliceAPI Staging.Outputs[OLE DB Source Output].Columns[Index]"
+                      externalMetadataColumnId="Package\Police Api Staging Source for Fact\PoliceAPI Staging.Outputs[OLE DB Source Output].ExternalColumns[Index]"
+                      lineageId="Package\Police Api Staging Source for Fact\PoliceAPI Staging.Outputs[OLE DB Source Output].Columns[Index]"
                       name="Index"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Police Api Staging Source 1\PoliceAPI Staging.Outputs[OLE DB Source Output].Columns[Category]"
+                      refId="Package\Police Api Staging Source for Fact\PoliceAPI Staging.Outputs[OLE DB Source Output].Columns[Category]"
                       codePage="1252"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Police Api Staging Source 1\PoliceAPI Staging.Outputs[OLE DB Source Output].ExternalColumns[Category]"
+                      externalMetadataColumnId="Package\Police Api Staging Source for Fact\PoliceAPI Staging.Outputs[OLE DB Source Output].ExternalColumns[Category]"
                       length="50"
-                      lineageId="Package\Police Api Staging Source 1\PoliceAPI Staging.Outputs[OLE DB Source Output].Columns[Category]"
+                      lineageId="Package\Police Api Staging Source for Fact\PoliceAPI Staging.Outputs[OLE DB Source Output].Columns[Category]"
                       name="Category"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Police Api Staging Source 1\PoliceAPI Staging.Outputs[OLE DB Source Output].Columns[Location_type]"
+                      refId="Package\Police Api Staging Source for Fact\PoliceAPI Staging.Outputs[OLE DB Source Output].Columns[Location_type]"
                       codePage="1252"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Police Api Staging Source 1\PoliceAPI Staging.Outputs[OLE DB Source Output].ExternalColumns[Location_type]"
+                      externalMetadataColumnId="Package\Police Api Staging Source for Fact\PoliceAPI Staging.Outputs[OLE DB Source Output].ExternalColumns[Location_type]"
                       length="50"
-                      lineageId="Package\Police Api Staging Source 1\PoliceAPI Staging.Outputs[OLE DB Source Output].Columns[Location_type]"
+                      lineageId="Package\Police Api Staging Source for Fact\PoliceAPI Staging.Outputs[OLE DB Source Output].Columns[Location_type]"
                       name="Location_type"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Police Api Staging Source 1\PoliceAPI Staging.Outputs[OLE DB Source Output].Columns[context]"
+                      refId="Package\Police Api Staging Source for Fact\PoliceAPI Staging.Outputs[OLE DB Source Output].Columns[context]"
                       codePage="1252"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Police Api Staging Source 1\PoliceAPI Staging.Outputs[OLE DB Source Output].ExternalColumns[context]"
+                      externalMetadataColumnId="Package\Police Api Staging Source for Fact\PoliceAPI Staging.Outputs[OLE DB Source Output].ExternalColumns[context]"
                       length="50"
-                      lineageId="Package\Police Api Staging Source 1\PoliceAPI Staging.Outputs[OLE DB Source Output].Columns[context]"
+                      lineageId="Package\Police Api Staging Source for Fact\PoliceAPI Staging.Outputs[OLE DB Source Output].Columns[context]"
                       name="context"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Police Api Staging Source 1\PoliceAPI Staging.Outputs[OLE DB Source Output].Columns[outcome_status]"
+                      refId="Package\Police Api Staging Source for Fact\PoliceAPI Staging.Outputs[OLE DB Source Output].Columns[outcome_status]"
                       codePage="1252"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Police Api Staging Source 1\PoliceAPI Staging.Outputs[OLE DB Source Output].ExternalColumns[outcome_status]"
+                      externalMetadataColumnId="Package\Police Api Staging Source for Fact\PoliceAPI Staging.Outputs[OLE DB Source Output].ExternalColumns[outcome_status]"
                       length="50"
-                      lineageId="Package\Police Api Staging Source 1\PoliceAPI Staging.Outputs[OLE DB Source Output].Columns[outcome_status]"
+                      lineageId="Package\Police Api Staging Source for Fact\PoliceAPI Staging.Outputs[OLE DB Source Output].Columns[outcome_status]"
                       name="outcome_status"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Police Api Staging Source 1\PoliceAPI Staging.Outputs[OLE DB Source Output].Columns[persistent_id]"
+                      refId="Package\Police Api Staging Source for Fact\PoliceAPI Staging.Outputs[OLE DB Source Output].Columns[persistent_id]"
                       codePage="1252"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Police Api Staging Source 1\PoliceAPI Staging.Outputs[OLE DB Source Output].ExternalColumns[persistent_id]"
+                      externalMetadataColumnId="Package\Police Api Staging Source for Fact\PoliceAPI Staging.Outputs[OLE DB Source Output].ExternalColumns[persistent_id]"
                       length="225"
-                      lineageId="Package\Police Api Staging Source 1\PoliceAPI Staging.Outputs[OLE DB Source Output].Columns[persistent_id]"
+                      lineageId="Package\Police Api Staging Source for Fact\PoliceAPI Staging.Outputs[OLE DB Source Output].Columns[persistent_id]"
                       name="persistent_id"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Police Api Staging Source 1\PoliceAPI Staging.Outputs[OLE DB Source Output].Columns[id]"
+                      refId="Package\Police Api Staging Source for Fact\PoliceAPI Staging.Outputs[OLE DB Source Output].Columns[id]"
                       dataType="i4"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Police Api Staging Source 1\PoliceAPI Staging.Outputs[OLE DB Source Output].ExternalColumns[id]"
-                      lineageId="Package\Police Api Staging Source 1\PoliceAPI Staging.Outputs[OLE DB Source Output].Columns[id]"
+                      externalMetadataColumnId="Package\Police Api Staging Source for Fact\PoliceAPI Staging.Outputs[OLE DB Source Output].ExternalColumns[id]"
+                      lineageId="Package\Police Api Staging Source for Fact\PoliceAPI Staging.Outputs[OLE DB Source Output].Columns[id]"
                       name="id"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Police Api Staging Source 1\PoliceAPI Staging.Outputs[OLE DB Source Output].Columns[location_subtype]"
+                      refId="Package\Police Api Staging Source for Fact\PoliceAPI Staging.Outputs[OLE DB Source Output].Columns[location_subtype]"
                       codePage="1252"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Police Api Staging Source 1\PoliceAPI Staging.Outputs[OLE DB Source Output].ExternalColumns[location_subtype]"
+                      externalMetadataColumnId="Package\Police Api Staging Source for Fact\PoliceAPI Staging.Outputs[OLE DB Source Output].ExternalColumns[location_subtype]"
                       length="30"
-                      lineageId="Package\Police Api Staging Source 1\PoliceAPI Staging.Outputs[OLE DB Source Output].Columns[location_subtype]"
+                      lineageId="Package\Police Api Staging Source for Fact\PoliceAPI Staging.Outputs[OLE DB Source Output].Columns[location_subtype]"
                       name="location_subtype"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Police Api Staging Source 1\PoliceAPI Staging.Outputs[OLE DB Source Output].Columns[month]"
+                      refId="Package\Police Api Staging Source for Fact\PoliceAPI Staging.Outputs[OLE DB Source Output].Columns[month]"
                       codePage="1252"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Police Api Staging Source 1\PoliceAPI Staging.Outputs[OLE DB Source Output].ExternalColumns[month]"
+                      externalMetadataColumnId="Package\Police Api Staging Source for Fact\PoliceAPI Staging.Outputs[OLE DB Source Output].ExternalColumns[month]"
                       length="30"
-                      lineageId="Package\Police Api Staging Source 1\PoliceAPI Staging.Outputs[OLE DB Source Output].Columns[month]"
+                      lineageId="Package\Police Api Staging Source for Fact\PoliceAPI Staging.Outputs[OLE DB Source Output].Columns[month]"
                       name="month"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Police Api Staging Source 1\PoliceAPI Staging.Outputs[OLE DB Source Output].Columns[location.latitude]"
+                      refId="Package\Police Api Staging Source for Fact\PoliceAPI Staging.Outputs[OLE DB Source Output].Columns[location.latitude]"
                       dataType="numeric"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Police Api Staging Source 1\PoliceAPI Staging.Outputs[OLE DB Source Output].ExternalColumns[location.latitude]"
-                      lineageId="Package\Police Api Staging Source 1\PoliceAPI Staging.Outputs[OLE DB Source Output].Columns[location.latitude]"
+                      externalMetadataColumnId="Package\Police Api Staging Source for Fact\PoliceAPI Staging.Outputs[OLE DB Source Output].ExternalColumns[location.latitude]"
+                      lineageId="Package\Police Api Staging Source for Fact\PoliceAPI Staging.Outputs[OLE DB Source Output].Columns[location.latitude]"
                       name="location.latitude"
                       precision="8"
                       scale="6"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Police Api Staging Source 1\PoliceAPI Staging.Outputs[OLE DB Source Output].Columns[location.street.id]"
+                      refId="Package\Police Api Staging Source for Fact\PoliceAPI Staging.Outputs[OLE DB Source Output].Columns[location.street.id]"
                       dataType="i4"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Police Api Staging Source 1\PoliceAPI Staging.Outputs[OLE DB Source Output].ExternalColumns[location.street.id]"
-                      lineageId="Package\Police Api Staging Source 1\PoliceAPI Staging.Outputs[OLE DB Source Output].Columns[location.street.id]"
+                      externalMetadataColumnId="Package\Police Api Staging Source for Fact\PoliceAPI Staging.Outputs[OLE DB Source Output].ExternalColumns[location.street.id]"
+                      lineageId="Package\Police Api Staging Source for Fact\PoliceAPI Staging.Outputs[OLE DB Source Output].Columns[location.street.id]"
                       name="location.street.id"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Police Api Staging Source 1\PoliceAPI Staging.Outputs[OLE DB Source Output].Columns[location.street.name]"
+                      refId="Package\Police Api Staging Source for Fact\PoliceAPI Staging.Outputs[OLE DB Source Output].Columns[location.street.name]"
                       codePage="1252"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Police Api Staging Source 1\PoliceAPI Staging.Outputs[OLE DB Source Output].ExternalColumns[location.street.name]"
+                      externalMetadataColumnId="Package\Police Api Staging Source for Fact\PoliceAPI Staging.Outputs[OLE DB Source Output].ExternalColumns[location.street.name]"
                       length="50"
-                      lineageId="Package\Police Api Staging Source 1\PoliceAPI Staging.Outputs[OLE DB Source Output].Columns[location.street.name]"
+                      lineageId="Package\Police Api Staging Source for Fact\PoliceAPI Staging.Outputs[OLE DB Source Output].Columns[location.street.name]"
                       name="location.street.name"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Police Api Staging Source 1\PoliceAPI Staging.Outputs[OLE DB Source Output].Columns[location.longitude]"
+                      refId="Package\Police Api Staging Source for Fact\PoliceAPI Staging.Outputs[OLE DB Source Output].Columns[location.longitude]"
                       dataType="numeric"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Police Api Staging Source 1\PoliceAPI Staging.Outputs[OLE DB Source Output].ExternalColumns[location.longitude]"
-                      lineageId="Package\Police Api Staging Source 1\PoliceAPI Staging.Outputs[OLE DB Source Output].Columns[location.longitude]"
+                      externalMetadataColumnId="Package\Police Api Staging Source for Fact\PoliceAPI Staging.Outputs[OLE DB Source Output].ExternalColumns[location.longitude]"
+                      lineageId="Package\Police Api Staging Source for Fact\PoliceAPI Staging.Outputs[OLE DB Source Output].Columns[location.longitude]"
                       name="location.longitude"
                       precision="9"
                       scale="6"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Police Api Staging Source 1\PoliceAPI Staging.Outputs[OLE DB Source Output].Columns[outcome_status.category]"
+                      refId="Package\Police Api Staging Source for Fact\PoliceAPI Staging.Outputs[OLE DB Source Output].Columns[outcome_status.category]"
                       codePage="1252"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Police Api Staging Source 1\PoliceAPI Staging.Outputs[OLE DB Source Output].ExternalColumns[outcome_status.category]"
+                      externalMetadataColumnId="Package\Police Api Staging Source for Fact\PoliceAPI Staging.Outputs[OLE DB Source Output].ExternalColumns[outcome_status.category]"
                       length="225"
-                      lineageId="Package\Police Api Staging Source 1\PoliceAPI Staging.Outputs[OLE DB Source Output].Columns[outcome_status.category]"
+                      lineageId="Package\Police Api Staging Source for Fact\PoliceAPI Staging.Outputs[OLE DB Source Output].Columns[outcome_status.category]"
                       name="outcome_status.category"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Police Api Staging Source 1\PoliceAPI Staging.Outputs[OLE DB Source Output].Columns[outcome_status.date]"
+                      refId="Package\Police Api Staging Source for Fact\PoliceAPI Staging.Outputs[OLE DB Source Output].Columns[outcome_status.date]"
                       codePage="1252"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Police Api Staging Source 1\PoliceAPI Staging.Outputs[OLE DB Source Output].ExternalColumns[outcome_status.date]"
+                      externalMetadataColumnId="Package\Police Api Staging Source for Fact\PoliceAPI Staging.Outputs[OLE DB Source Output].ExternalColumns[outcome_status.date]"
                       length="30"
-                      lineageId="Package\Police Api Staging Source 1\PoliceAPI Staging.Outputs[OLE DB Source Output].Columns[outcome_status.date]"
+                      lineageId="Package\Police Api Staging Source for Fact\PoliceAPI Staging.Outputs[OLE DB Source Output].Columns[outcome_status.date]"
                       name="outcome_status.date"
                       truncationRowDisposition="FailComponent" />
                   </outputColumns>
                   <externalMetadataColumns
                     isUsed="True">
                     <externalMetadataColumn
-                      refId="Package\Police Api Staging Source 1\PoliceAPI Staging.Outputs[OLE DB Source Output].ExternalColumns[Index]"
+                      refId="Package\Police Api Staging Source for Fact\PoliceAPI Staging.Outputs[OLE DB Source Output].ExternalColumns[Index]"
                       dataType="i4"
                       name="Index" />
                     <externalMetadataColumn
-                      refId="Package\Police Api Staging Source 1\PoliceAPI Staging.Outputs[OLE DB Source Output].ExternalColumns[Category]"
+                      refId="Package\Police Api Staging Source for Fact\PoliceAPI Staging.Outputs[OLE DB Source Output].ExternalColumns[Category]"
                       codePage="1252"
                       dataType="str"
                       length="50"
                       name="Category" />
                     <externalMetadataColumn
-                      refId="Package\Police Api Staging Source 1\PoliceAPI Staging.Outputs[OLE DB Source Output].ExternalColumns[Location_type]"
+                      refId="Package\Police Api Staging Source for Fact\PoliceAPI Staging.Outputs[OLE DB Source Output].ExternalColumns[Location_type]"
                       codePage="1252"
                       dataType="str"
                       length="50"
                       name="Location_type" />
                     <externalMetadataColumn
-                      refId="Package\Police Api Staging Source 1\PoliceAPI Staging.Outputs[OLE DB Source Output].ExternalColumns[context]"
+                      refId="Package\Police Api Staging Source for Fact\PoliceAPI Staging.Outputs[OLE DB Source Output].ExternalColumns[context]"
                       codePage="1252"
                       dataType="str"
                       length="50"
                       name="context" />
                     <externalMetadataColumn
-                      refId="Package\Police Api Staging Source 1\PoliceAPI Staging.Outputs[OLE DB Source Output].ExternalColumns[outcome_status]"
+                      refId="Package\Police Api Staging Source for Fact\PoliceAPI Staging.Outputs[OLE DB Source Output].ExternalColumns[outcome_status]"
                       codePage="1252"
                       dataType="str"
                       length="50"
                       name="outcome_status" />
                     <externalMetadataColumn
-                      refId="Package\Police Api Staging Source 1\PoliceAPI Staging.Outputs[OLE DB Source Output].ExternalColumns[persistent_id]"
+                      refId="Package\Police Api Staging Source for Fact\PoliceAPI Staging.Outputs[OLE DB Source Output].ExternalColumns[persistent_id]"
                       codePage="1252"
                       dataType="str"
                       length="225"
                       name="persistent_id" />
                     <externalMetadataColumn
-                      refId="Package\Police Api Staging Source 1\PoliceAPI Staging.Outputs[OLE DB Source Output].ExternalColumns[id]"
+                      refId="Package\Police Api Staging Source for Fact\PoliceAPI Staging.Outputs[OLE DB Source Output].ExternalColumns[id]"
                       dataType="i4"
                       name="id" />
                     <externalMetadataColumn
-                      refId="Package\Police Api Staging Source 1\PoliceAPI Staging.Outputs[OLE DB Source Output].ExternalColumns[location_subtype]"
+                      refId="Package\Police Api Staging Source for Fact\PoliceAPI Staging.Outputs[OLE DB Source Output].ExternalColumns[location_subtype]"
                       codePage="1252"
                       dataType="str"
                       length="30"
                       name="location_subtype" />
                     <externalMetadataColumn
-                      refId="Package\Police Api Staging Source 1\PoliceAPI Staging.Outputs[OLE DB Source Output].ExternalColumns[month]"
+                      refId="Package\Police Api Staging Source for Fact\PoliceAPI Staging.Outputs[OLE DB Source Output].ExternalColumns[month]"
                       codePage="1252"
                       dataType="str"
                       length="30"
                       name="month" />
                     <externalMetadataColumn
-                      refId="Package\Police Api Staging Source 1\PoliceAPI Staging.Outputs[OLE DB Source Output].ExternalColumns[location.latitude]"
+                      refId="Package\Police Api Staging Source for Fact\PoliceAPI Staging.Outputs[OLE DB Source Output].ExternalColumns[location.latitude]"
                       dataType="numeric"
                       name="location.latitude"
                       precision="8"
                       scale="6" />
                     <externalMetadataColumn
-                      refId="Package\Police Api Staging Source 1\PoliceAPI Staging.Outputs[OLE DB Source Output].ExternalColumns[location.street.id]"
+                      refId="Package\Police Api Staging Source for Fact\PoliceAPI Staging.Outputs[OLE DB Source Output].ExternalColumns[location.street.id]"
                       dataType="i4"
                       name="location.street.id" />
                     <externalMetadataColumn
-                      refId="Package\Police Api Staging Source 1\PoliceAPI Staging.Outputs[OLE DB Source Output].ExternalColumns[location.street.name]"
+                      refId="Package\Police Api Staging Source for Fact\PoliceAPI Staging.Outputs[OLE DB Source Output].ExternalColumns[location.street.name]"
                       codePage="1252"
                       dataType="str"
                       length="50"
                       name="location.street.name" />
                     <externalMetadataColumn
-                      refId="Package\Police Api Staging Source 1\PoliceAPI Staging.Outputs[OLE DB Source Output].ExternalColumns[location.longitude]"
+                      refId="Package\Police Api Staging Source for Fact\PoliceAPI Staging.Outputs[OLE DB Source Output].ExternalColumns[location.longitude]"
                       dataType="numeric"
                       name="location.longitude"
                       precision="9"
                       scale="6" />
                     <externalMetadataColumn
-                      refId="Package\Police Api Staging Source 1\PoliceAPI Staging.Outputs[OLE DB Source Output].ExternalColumns[outcome_status.category]"
+                      refId="Package\Police Api Staging Source for Fact\PoliceAPI Staging.Outputs[OLE DB Source Output].ExternalColumns[outcome_status.category]"
                       codePage="1252"
                       dataType="str"
                       length="225"
                       name="outcome_status.category" />
                     <externalMetadataColumn
-                      refId="Package\Police Api Staging Source 1\PoliceAPI Staging.Outputs[OLE DB Source Output].ExternalColumns[outcome_status.date]"
+                      refId="Package\Police Api Staging Source for Fact\PoliceAPI Staging.Outputs[OLE DB Source Output].ExternalColumns[outcome_status.date]"
                       codePage="1252"
                       dataType="str"
                       length="30"
@@ -2003,119 +1653,119 @@
                   </externalMetadataColumns>
                 </output>
                 <output
-                  refId="Package\Police Api Staging Source 1\PoliceAPI Staging.Outputs[OLE DB Source Error Output]"
+                  refId="Package\Police Api Staging Source for Fact\PoliceAPI Staging.Outputs[OLE DB Source Error Output]"
                   isErrorOut="true"
                   name="OLE DB Source Error Output">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Police Api Staging Source 1\PoliceAPI Staging.Outputs[OLE DB Source Error Output].Columns[Index]"
+                      refId="Package\Police Api Staging Source for Fact\PoliceAPI Staging.Outputs[OLE DB Source Error Output].Columns[Index]"
                       dataType="i4"
-                      lineageId="Package\Police Api Staging Source 1\PoliceAPI Staging.Outputs[OLE DB Source Error Output].Columns[Index]"
+                      lineageId="Package\Police Api Staging Source for Fact\PoliceAPI Staging.Outputs[OLE DB Source Error Output].Columns[Index]"
                       name="Index" />
                     <outputColumn
-                      refId="Package\Police Api Staging Source 1\PoliceAPI Staging.Outputs[OLE DB Source Error Output].Columns[Category]"
+                      refId="Package\Police Api Staging Source for Fact\PoliceAPI Staging.Outputs[OLE DB Source Error Output].Columns[Category]"
                       codePage="1252"
                       dataType="str"
                       length="50"
-                      lineageId="Package\Police Api Staging Source 1\PoliceAPI Staging.Outputs[OLE DB Source Error Output].Columns[Category]"
+                      lineageId="Package\Police Api Staging Source for Fact\PoliceAPI Staging.Outputs[OLE DB Source Error Output].Columns[Category]"
                       name="Category" />
                     <outputColumn
-                      refId="Package\Police Api Staging Source 1\PoliceAPI Staging.Outputs[OLE DB Source Error Output].Columns[Location_type]"
+                      refId="Package\Police Api Staging Source for Fact\PoliceAPI Staging.Outputs[OLE DB Source Error Output].Columns[Location_type]"
                       codePage="1252"
                       dataType="str"
                       length="50"
-                      lineageId="Package\Police Api Staging Source 1\PoliceAPI Staging.Outputs[OLE DB Source Error Output].Columns[Location_type]"
+                      lineageId="Package\Police Api Staging Source for Fact\PoliceAPI Staging.Outputs[OLE DB Source Error Output].Columns[Location_type]"
                       name="Location_type" />
                     <outputColumn
-                      refId="Package\Police Api Staging Source 1\PoliceAPI Staging.Outputs[OLE DB Source Error Output].Columns[context]"
+                      refId="Package\Police Api Staging Source for Fact\PoliceAPI Staging.Outputs[OLE DB Source Error Output].Columns[context]"
                       codePage="1252"
                       dataType="str"
                       length="50"
-                      lineageId="Package\Police Api Staging Source 1\PoliceAPI Staging.Outputs[OLE DB Source Error Output].Columns[context]"
+                      lineageId="Package\Police Api Staging Source for Fact\PoliceAPI Staging.Outputs[OLE DB Source Error Output].Columns[context]"
                       name="context" />
                     <outputColumn
-                      refId="Package\Police Api Staging Source 1\PoliceAPI Staging.Outputs[OLE DB Source Error Output].Columns[outcome_status]"
+                      refId="Package\Police Api Staging Source for Fact\PoliceAPI Staging.Outputs[OLE DB Source Error Output].Columns[outcome_status]"
                       codePage="1252"
                       dataType="str"
                       length="50"
-                      lineageId="Package\Police Api Staging Source 1\PoliceAPI Staging.Outputs[OLE DB Source Error Output].Columns[outcome_status]"
+                      lineageId="Package\Police Api Staging Source for Fact\PoliceAPI Staging.Outputs[OLE DB Source Error Output].Columns[outcome_status]"
                       name="outcome_status" />
                     <outputColumn
-                      refId="Package\Police Api Staging Source 1\PoliceAPI Staging.Outputs[OLE DB Source Error Output].Columns[persistent_id]"
+                      refId="Package\Police Api Staging Source for Fact\PoliceAPI Staging.Outputs[OLE DB Source Error Output].Columns[persistent_id]"
                       codePage="1252"
                       dataType="str"
                       length="225"
-                      lineageId="Package\Police Api Staging Source 1\PoliceAPI Staging.Outputs[OLE DB Source Error Output].Columns[persistent_id]"
+                      lineageId="Package\Police Api Staging Source for Fact\PoliceAPI Staging.Outputs[OLE DB Source Error Output].Columns[persistent_id]"
                       name="persistent_id" />
                     <outputColumn
-                      refId="Package\Police Api Staging Source 1\PoliceAPI Staging.Outputs[OLE DB Source Error Output].Columns[id]"
+                      refId="Package\Police Api Staging Source for Fact\PoliceAPI Staging.Outputs[OLE DB Source Error Output].Columns[id]"
                       dataType="i4"
-                      lineageId="Package\Police Api Staging Source 1\PoliceAPI Staging.Outputs[OLE DB Source Error Output].Columns[id]"
+                      lineageId="Package\Police Api Staging Source for Fact\PoliceAPI Staging.Outputs[OLE DB Source Error Output].Columns[id]"
                       name="id" />
                     <outputColumn
-                      refId="Package\Police Api Staging Source 1\PoliceAPI Staging.Outputs[OLE DB Source Error Output].Columns[location_subtype]"
+                      refId="Package\Police Api Staging Source for Fact\PoliceAPI Staging.Outputs[OLE DB Source Error Output].Columns[location_subtype]"
                       codePage="1252"
                       dataType="str"
                       length="30"
-                      lineageId="Package\Police Api Staging Source 1\PoliceAPI Staging.Outputs[OLE DB Source Error Output].Columns[location_subtype]"
+                      lineageId="Package\Police Api Staging Source for Fact\PoliceAPI Staging.Outputs[OLE DB Source Error Output].Columns[location_subtype]"
                       name="location_subtype" />
                     <outputColumn
-                      refId="Package\Police Api Staging Source 1\PoliceAPI Staging.Outputs[OLE DB Source Error Output].Columns[month]"
+                      refId="Package\Police Api Staging Source for Fact\PoliceAPI Staging.Outputs[OLE DB Source Error Output].Columns[month]"
                       codePage="1252"
                       dataType="str"
                       length="30"
-                      lineageId="Package\Police Api Staging Source 1\PoliceAPI Staging.Outputs[OLE DB Source Error Output].Columns[month]"
+                      lineageId="Package\Police Api Staging Source for Fact\PoliceAPI Staging.Outputs[OLE DB Source Error Output].Columns[month]"
                       name="month" />
                     <outputColumn
-                      refId="Package\Police Api Staging Source 1\PoliceAPI Staging.Outputs[OLE DB Source Error Output].Columns[location.latitude]"
+                      refId="Package\Police Api Staging Source for Fact\PoliceAPI Staging.Outputs[OLE DB Source Error Output].Columns[location.latitude]"
                       dataType="numeric"
-                      lineageId="Package\Police Api Staging Source 1\PoliceAPI Staging.Outputs[OLE DB Source Error Output].Columns[location.latitude]"
+                      lineageId="Package\Police Api Staging Source for Fact\PoliceAPI Staging.Outputs[OLE DB Source Error Output].Columns[location.latitude]"
                       name="location.latitude"
                       precision="8"
                       scale="6" />
                     <outputColumn
-                      refId="Package\Police Api Staging Source 1\PoliceAPI Staging.Outputs[OLE DB Source Error Output].Columns[location.street.id]"
+                      refId="Package\Police Api Staging Source for Fact\PoliceAPI Staging.Outputs[OLE DB Source Error Output].Columns[location.street.id]"
                       dataType="i4"
-                      lineageId="Package\Police Api Staging Source 1\PoliceAPI Staging.Outputs[OLE DB Source Error Output].Columns[location.street.id]"
+                      lineageId="Package\Police Api Staging Source for Fact\PoliceAPI Staging.Outputs[OLE DB Source Error Output].Columns[location.street.id]"
                       name="location.street.id" />
                     <outputColumn
-                      refId="Package\Police Api Staging Source 1\PoliceAPI Staging.Outputs[OLE DB Source Error Output].Columns[location.street.name]"
+                      refId="Package\Police Api Staging Source for Fact\PoliceAPI Staging.Outputs[OLE DB Source Error Output].Columns[location.street.name]"
                       codePage="1252"
                       dataType="str"
                       length="50"
-                      lineageId="Package\Police Api Staging Source 1\PoliceAPI Staging.Outputs[OLE DB Source Error Output].Columns[location.street.name]"
+                      lineageId="Package\Police Api Staging Source for Fact\PoliceAPI Staging.Outputs[OLE DB Source Error Output].Columns[location.street.name]"
                       name="location.street.name" />
                     <outputColumn
-                      refId="Package\Police Api Staging Source 1\PoliceAPI Staging.Outputs[OLE DB Source Error Output].Columns[location.longitude]"
+                      refId="Package\Police Api Staging Source for Fact\PoliceAPI Staging.Outputs[OLE DB Source Error Output].Columns[location.longitude]"
                       dataType="numeric"
-                      lineageId="Package\Police Api Staging Source 1\PoliceAPI Staging.Outputs[OLE DB Source Error Output].Columns[location.longitude]"
+                      lineageId="Package\Police Api Staging Source for Fact\PoliceAPI Staging.Outputs[OLE DB Source Error Output].Columns[location.longitude]"
                       name="location.longitude"
                       precision="9"
                       scale="6" />
                     <outputColumn
-                      refId="Package\Police Api Staging Source 1\PoliceAPI Staging.Outputs[OLE DB Source Error Output].Columns[outcome_status.category]"
+                      refId="Package\Police Api Staging Source for Fact\PoliceAPI Staging.Outputs[OLE DB Source Error Output].Columns[outcome_status.category]"
                       codePage="1252"
                       dataType="str"
                       length="225"
-                      lineageId="Package\Police Api Staging Source 1\PoliceAPI Staging.Outputs[OLE DB Source Error Output].Columns[outcome_status.category]"
+                      lineageId="Package\Police Api Staging Source for Fact\PoliceAPI Staging.Outputs[OLE DB Source Error Output].Columns[outcome_status.category]"
                       name="outcome_status.category" />
                     <outputColumn
-                      refId="Package\Police Api Staging Source 1\PoliceAPI Staging.Outputs[OLE DB Source Error Output].Columns[outcome_status.date]"
+                      refId="Package\Police Api Staging Source for Fact\PoliceAPI Staging.Outputs[OLE DB Source Error Output].Columns[outcome_status.date]"
                       codePage="1252"
                       dataType="str"
                       length="30"
-                      lineageId="Package\Police Api Staging Source 1\PoliceAPI Staging.Outputs[OLE DB Source Error Output].Columns[outcome_status.date]"
+                      lineageId="Package\Police Api Staging Source for Fact\PoliceAPI Staging.Outputs[OLE DB Source Error Output].Columns[outcome_status.date]"
                       name="outcome_status.date" />
                     <outputColumn
-                      refId="Package\Police Api Staging Source 1\PoliceAPI Staging.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      refId="Package\Police Api Staging Source for Fact\PoliceAPI Staging.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
                       dataType="i4"
-                      lineageId="Package\Police Api Staging Source 1\PoliceAPI Staging.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      lineageId="Package\Police Api Staging Source for Fact\PoliceAPI Staging.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
                       name="ErrorCode"
                       specialFlags="1" />
                     <outputColumn
-                      refId="Package\Police Api Staging Source 1\PoliceAPI Staging.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      refId="Package\Police Api Staging Source for Fact\PoliceAPI Staging.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
                       dataType="i4"
-                      lineageId="Package\Police Api Staging Source 1\PoliceAPI Staging.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      lineageId="Package\Police Api Staging Source for Fact\PoliceAPI Staging.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -2132,15 +1782,15 @@
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint]"
       DTS:CreationName=""
-      DTS:DTSID="{BE6BEE46-64D0-4BB2-9608-A95E80EA1FBF}"
-      DTS:From="Package\Police Api Staging Source"
+      DTS:DTSID="{393e01fa-5c02-4a32-93fc-ecec511192d7}"
+      DTS:From="Package\Police Api Staging Source for Dim"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint"
       DTS:To="Package\DimLocation Insertion" />
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
       DTS:CreationName=""
-      DTS:DTSID="{B3CF3C8A-BF2A-4F03-A8ED-CDEC200E9FCC}"
+      DTS:DTSID="{2b2672d9-8268-403d-a3a1-d7387f5c9253}"
       DTS:From="Package\DimLocation Insertion"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 1"
@@ -2148,23 +1798,23 @@
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 1 1]"
       DTS:CreationName=""
-      DTS:DTSID="{b13a2c76-612f-43c3-9297-bbc17e3302b3}"
+      DTS:DTSID="{147db70d-3308-441f-88c3-8a42b5b0e23e}"
       DTS:From="Package\FactCrime Insertion"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 1 1"
-      DTS:To="Package\FactSales Table" />
+      DTS:To="Package\FactCrime Table" />
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 2]"
       DTS:CreationName=""
-      DTS:DTSID="{56241CA0-B864-4E7C-82A2-B910E3C813F3}"
-      DTS:From="Package\Police Api Staging Source"
+      DTS:DTSID="{6189f7f7-7b60-4771-b4b7-f5883144fb2d}"
+      DTS:From="Package\Police Api Staging Source for Dim"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 2"
       DTS:To="Package\DimCrimeCategory Insertion" />
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 3]"
       DTS:CreationName=""
-      DTS:DTSID="{FF7B267C-527D-4BC2-88F0-2C7223AFEA05}"
+      DTS:DTSID="{203e0c6b-3c50-4846-a30e-65a5e672643a}"
       DTS:From="Package\DimCrimeCategory Insertion"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 3"
@@ -2172,7 +1822,7 @@
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 4]"
       DTS:CreationName=""
-      DTS:DTSID="{12A513A7-9F97-4D28-8343-13DFEF2A48C6}"
+      DTS:DTSID="{4a39c402-fae0-477e-9655-0b3654634ff9}"
       DTS:From="Package\DimOutcomeStatus Insertion"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 4"
@@ -2180,43 +1830,43 @@
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 5]"
       DTS:CreationName=""
-      DTS:DTSID="{5E5F750D-42F3-4BDD-8FBE-DAF2B9171E85}"
-      DTS:From="Package\Police Api Staging Source"
+      DTS:DTSID="{d6a83eb2-fdea-428d-aa8f-ab9359626e75}"
+      DTS:From="Package\Police Api Staging Source for Dim"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 5"
       DTS:To="Package\DimOutcomeStatus Insertion" />
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 6]"
       DTS:CreationName=""
-      DTS:DTSID="{82592625-865a-45bd-b070-fb382f662e20}"
-      DTS:From="Package\Police Api Staging Source 1"
+      DTS:DTSID="{55ae72ec-443a-4d9b-818b-ee616cf6c9e3}"
+      DTS:From="Package\Police Api Staging Source for Fact"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 6"
       DTS:To="Package\FactCrime Insertion" />
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 7]"
       DTS:CreationName=""
-      DTS:DTSID="{9FCF68FD-9F51-4FD6-9D07-37FA3BA17AA8}"
+      DTS:DTSID="{17eaa818-3068-4276-a59c-3ec814eca174}"
       DTS:From="Package\DimCrimeCategory Table"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 7"
-      DTS:To="Package\Police Api Staging Source 1" />
+      DTS:To="Package\Police Api Staging Source for Fact" />
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 8]"
       DTS:CreationName=""
-      DTS:DTSID="{ECDC119A-FBB8-4207-8285-5280432C7900}"
+      DTS:DTSID="{03822b7c-837b-4b4e-a5aa-48f7d7f1144d}"
       DTS:From="Package\DimLocation Table"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 8"
-      DTS:To="Package\Police Api Staging Source 1" />
+      DTS:To="Package\Police Api Staging Source for Fact" />
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 9]"
       DTS:CreationName=""
-      DTS:DTSID="{F9C3802A-39E0-44F7-BAC7-2D7636C8843E}"
+      DTS:DTSID="{68632b55-ed68-467e-bd20-34a4c65cb2ab}"
       DTS:From="Package\DimOutcomeStatus"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 9"
-      DTS:To="Package\Police Api Staging Source 1" />
+      DTS:To="Package\Police Api Staging Source for Fact" />
   </DTS:PrecedenceConstraints>
   <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
 <!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
@@ -2233,57 +1883,69 @@
         <NodeLayout
           Size="212,42"
           Id="Package\DimCrimeCategory Insertion"
-          TopLeft="357.285714285714,104.107142857143" />
+          TopLeft="266.285714285714,147.5" />
         <NodeLayout
           Size="196,42"
           Id="Package\DimCrimeCategory Table"
-          TopLeft="377.678571428571,244.285714285714" />
+          TopLeft="280.428571428571,218.928571428571" />
         <NodeLayout
           Size="204,42"
           Id="Package\DimLocation Insertion"
-          TopLeft="151,103" />
+          TopLeft="60,146.392857142857" />
         <NodeLayout
           Size="166,42"
           Id="Package\DimLocation Table"
-          TopLeft="210.75,247" />
+          TopLeft="113.5,221.642857142857" />
         <NodeLayout
           Size="169,42"
           Id="Package\DimOutcomeStatus"
-          TopLeft="574.214285714286,246.392857142857" />
+          TopLeft="476.964285714286,221.035714285714" />
         <NodeLayout
-          Size="201,42"
+          Size="216,42"
           Id="Package\DimOutcomeStatus Insertion"
-          TopLeft="568.392857142857,103.964285714286" />
+          TopLeft="477.392857142857,147.357142857143" />
         <NodeLayout
-          Size="198,42"
-          Id="Package\Police Api Staging Source"
-          TopLeft="371.142857142857,17.8571428571429" />
+          Size="171,42"
+          Id="Package\FactCrime Insertion"
+          TopLeft="286,358.142857142857" />
+        <NodeLayout
+          Size="155,42"
+          Id="Package\FactCrime Table"
+          TopLeft="296.25,433.142857142857" />
+        <NodeLayout
+          Size="236,42"
+          Id="Package\Police Api Staging Source for Dim"
+          TopLeft="257.642857142857,60" />
+        <NodeLayout
+          Size="238,42"
+          Id="Package\Police Api Staging Source for Fact"
+          TopLeft="252.25,290.142857142857" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
-          TopLeft="422.642857142857,59.8571428571429">
+          TopLeft="318.642857142857,102">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-169.642857142857,43.1428571428571"
+              EndConnector="-156.642857142857,44.3928571428571"
               Start="0,0"
-              End="-169.642857142857,35.6428571428571">
+              End="-156.642857142857,36.8928571428571">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,10.7631703844328" />
+                    End="0,11.1282920989625" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,10.7631703844328"
-                    Point2="0,14.7631703844328"
-                    Point3="-4,14.7631703844328" />
+                    Point1="0,11.1282920989625"
+                    Point2="0,15.1282920989625"
+                    Point3="-4,15.1282920989625" />
                   <mssgle:LineSegment
-                    End="-165.642857142857,14.7631703844328" />
+                    End="-152.642857142857,15.1282920989625" />
                   <mssgle:CubicBezierSegment
-                    Point1="-165.642857142857,14.7631703844328"
-                    Point2="-169.642857142857,14.7631703844328"
-                    Point3="-169.642857142857,18.7631703844328" />
+                    Point1="-152.642857142857,15.1282920989625"
+                    Point2="-156.642857142857,15.1282920989625"
+                    Point3="-156.642857142857,19.1282920989625" />
                   <mssgle:LineSegment
-                    End="-169.642857142857,35.6428571428571" />
+                    End="-156.642857142857,36.8928571428571" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -2294,30 +1956,52 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 1]"
-          TopLeft="253,145">
+          TopLeft="162,188.392857142857">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="40.75,102"
+              EndConnector="34.5,33.25"
               Start="0,0"
-              End="40.75,94.5">
+              End="34.5,25.75">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,47" />
+                    End="0,12.625" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,47"
-                    Point2="0,51"
-                    Point3="4,51" />
+                    Point1="0,12.625"
+                    Point2="0,16.625"
+                    Point3="4,16.625" />
                   <mssgle:LineSegment
-                    End="36.75,51" />
+                    End="30.5,16.625" />
                   <mssgle:CubicBezierSegment
-                    Point1="36.75,51"
-                    Point2="40.75,51"
-                    Point3="40.75,55" />
+                    Point1="30.5,16.625"
+                    Point2="34.5,16.625"
+                    Point3="34.5,20.625" />
                   <mssgle:LineSegment
-                    End="40.75,94.5" />
+                    End="34.5,25.75" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 1 1]"
+          TopLeft="372.625,400.142857142857">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,33"
+              Start="0,0"
+              End="0,25.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,25.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -2328,18 +2012,18 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 2]"
-          TopLeft="466.714285714286,59.8571428571429">
+          TopLeft="373.964285714286,102">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,44.2500000000001"
+              EndConnector="0,45.5000000000001"
               Start="0,0"
-              End="0,36.7500000000001">
+              End="0,38.0000000000001">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,36.7500000000001" />
+                    End="0,38.0000000000001" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -2350,30 +2034,18 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 3]"
-          TopLeft="463.285714285714,146.107142857143">
+          TopLeft="375.357142857142,189.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="12.392857142857,98.178571428571"
+              EndConnector="0,29.428571428571"
               Start="0,0"
-              End="12.392857142857,90.678571428571">
+              End="0,21.928571428571">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,45.0892857142855" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,45.0892857142855"
-                    Point2="0,49.0892857142855"
-                    Point3="4,49.0892857142855" />
-                  <mssgle:LineSegment
-                    End="8.392857142857,49.0892857142855" />
-                  <mssgle:CubicBezierSegment
-                    Point1="8.392857142857,49.0892857142855"
-                    Point2="12.392857142857,49.0892857142855"
-                    Point3="12.392857142857,53.0892857142855" />
-                  <mssgle:LineSegment
-                    End="12.392857142857,90.678571428571" />
+                    End="0,21.928571428571" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -2384,30 +2056,30 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 4]"
-          TopLeft="668.892857142857,145.964285714286">
+          TopLeft="585.392857142857,189.357142857143">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-10.178571428571,100.428571428571"
+              EndConnector="-23.928571428571,31.678571428571"
               Start="0,0"
-              End="-10.178571428571,92.928571428571">
+              End="-23.928571428571,24.178571428571">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,46.2142857142855" />
+                    End="0,11.8392857142855" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,46.2142857142855"
-                    Point2="0,50.2142857142855"
-                    Point3="-4,50.2142857142855" />
+                    Point1="0,11.8392857142855"
+                    Point2="0,15.8392857142855"
+                    Point3="-4,15.8392857142855" />
                   <mssgle:LineSegment
-                    End="-6.17857142857099,50.2142857142855" />
+                    End="-19.928571428571,15.8392857142855" />
                   <mssgle:CubicBezierSegment
-                    Point1="-6.17857142857099,50.2142857142855"
-                    Point2="-10.178571428571,50.2142857142855"
-                    Point3="-10.178571428571,54.2142857142855" />
+                    Point1="-19.928571428571,15.8392857142855"
+                    Point2="-23.928571428571,15.8392857142855"
+                    Point3="-23.928571428571,19.8392857142855" />
                   <mssgle:LineSegment
-                    End="-10.178571428571,92.928571428571" />
+                    End="-23.928571428571,24.178571428571" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -2418,154 +2090,30 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 5]"
-          TopLeft="517.642857142857,59.8571428571429">
+          TopLeft="432.642857142857,102">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="151.25,44.1071428571431"
+              EndConnector="152.75,45.3571428571431"
               Start="0,0"
-              End="151.25,36.6071428571431">
+              End="152.75,37.8571428571431">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,11.0931419079261" />
+                    End="0,11.4569034317639" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,11.0931419079261"
-                    Point2="0,15.0931419079261"
-                    Point3="4,15.0931419079261" />
+                    Point1="0,11.4569034317639"
+                    Point2="0,15.4569034317639"
+                    Point3="4,15.4569034317639" />
                   <mssgle:LineSegment
-                    End="147.25,15.0931419079261" />
+                    End="148.75,15.4569034317639" />
                   <mssgle:CubicBezierSegment
-                    Point1="147.25,15.0931419079261"
-                    Point2="151.25,15.0931419079261"
-                    Point3="151.25,19.0931419079261" />
+                    Point1="148.75,15.4569034317639"
+                    Point2="152.75,15.4569034317639"
+                    Point3="152.75,19.4569034317638" />
                   <mssgle:LineSegment
-                    End="151.25,36.6071428571431" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="152,42"
-          Id="Package\FactSales Table"
-          TopLeft="386,551" />
-        <NodeLayout
-          Size="171,42"
-          Id="Package\FactCrime Insertion"
-          TopLeft="382,426" />
-        <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint 1 1]"
-          TopLeft="464.75,468">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,83"
-              Start="0,0"
-              End="0,75.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,75.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="198,42"
-          Id="Package\Police Api Staging Source 1"
-          TopLeft="372,328" />
-        <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint 9]"
-          TopLeft="658.714285714286,288.392857142857">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-140.214285714286,39.607142857143"
-              Start="0,0"
-              End="-140.214285714286,32.107142857143">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,22.0538680588515" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,22.0538680588515"
-                    Point2="0,26.0538680588515"
-                    Point3="-4,26.0538680588515" />
-                  <mssgle:LineSegment
-                    End="-136.214285714286,26.0538680588515" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-136.214285714286,26.0538680588515"
-                    Point2="-140.214285714286,26.0538680588515"
-                    Point3="-140.214285714286,30.0538680588515" />
-                  <mssgle:LineSegment
-                    End="-140.214285714286,32.107142857143" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint 8]"
-          TopLeft="293.75,289">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="129.75,39"
-              Start="0,0"
-              End="129.75,31.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,21.6544850498339" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,21.6544850498339"
-                    Point2="0,25.6544850498339"
-                    Point3="4,25.6544850498339" />
-                  <mssgle:LineSegment
-                    End="125.75,25.6544850498339" />
-                  <mssgle:CubicBezierSegment
-                    Point1="125.75,25.6544850498339"
-                    Point2="129.75,25.6544850498339"
-                    Point3="129.75,29.6544850498339" />
-                  <mssgle:LineSegment
-                    End="129.75,31.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint 7]"
-          TopLeft="473.339285714286,286.285714285714">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,41.714285714286"
-              Start="0,0"
-              End="0,34.214285714286">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,34.214285714286" />
+                    End="152.75,37.8571428571431" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -2576,18 +2124,108 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 6]"
-          TopLeft="469.25,370">
+          TopLeft="371.375,332.142857142857">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,56"
+              EndConnector="0,25.9999999999999"
               Start="0,0"
-              End="0,48.5">
+              End="0,18.4999999999999">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,48.5" />
+                    End="0,18.4999999999999" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 7]"
+          TopLeft="374.839285714286,260.928571428571">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,29.2142857142861"
+              Start="0,0"
+              End="0,21.7142857142861">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,21.7142857142861" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 8]"
+          TopLeft="196.5,263.642857142857">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="117.25,26.5000000000001"
+              Start="0,0"
+              End="117.25,19.0000000000001">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,13.4709141274239" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,13.4709141274239"
+                    Point2="0,17.4709141274239"
+                    Point3="4,17.4709141274239" />
+                  <mssgle:LineSegment
+                    End="113.25,17.4709141274239" />
+                  <mssgle:CubicBezierSegment
+                    Point1="113.25,17.4709141274239"
+                    Point2="117.25,17.4709141274239"
+                    Point3="117.25,21.4709141274239" />
+                  <mssgle:LineSegment
+                    End="117.25,19.0000000000001" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 9]"
+          TopLeft="561.464285714286,263.035714285714">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-132.714285714286,27.1071428571431"
+              Start="0,0"
+              End="-132.714285714286,19.6071428571431">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,13.8711911357342" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,13.8711911357342"
+                    Point2="0,17.8711911357342"
+                    Point3="-4,17.8711911357342" />
+                  <mssgle:LineSegment
+                    End="-128.714285714286,17.8711911357342" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-128.714285714286,17.8711911357342"
+                    Point2="-132.714285714286,17.8711911357342"
+                    Point3="-132.714285714286,21.8711911357342" />
+                  <mssgle:LineSegment
+                    End="-132.714285714286,19.6071428571431" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -2657,7 +2295,7 @@
         <NodeLayout
           Size="198,42"
           Id="Package\DimOutcomeStatus\DimOutcomeStatus Table"
-          TopLeft="185,66" />
+          TopLeft="184,66" />
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
@@ -2675,19 +2313,19 @@
     </Properties>
   </PipelineComponentMetadata>
   <TaskHost
-    design-time-name="Package\Police Api Staging Source">
+    design-time-name="Package\FactCrime Table">
     <LayoutInfo>
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
         <NodeLayout
-          Size="161,42"
-          Id="Package\Police Api Staging Source\PoliceAPI Staging"
-          TopLeft="110,37" />
+          Size="155,42"
+          Id="Package\FactCrime Table\FactCrime Table"
+          TopLeft="185,66" />
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\Police Api Staging Source\PoliceAPI Staging">
+    design-time-name="Package\FactCrime Table\FactCrime Table">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -2700,28 +2338,54 @@
     </Properties>
   </PipelineComponentMetadata>
   <TaskHost
-    design-time-name="Package\FactSales Table">
-    <LayoutInfo>
-      <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
-        <NodeLayout
-          Size="152,42"
-          Id="Package\FactSales Table\FactSales Table"
-          TopLeft="185,66" />
-      </GraphLayout>
-    </LayoutInfo>
-  </TaskHost>
-  <TaskHost
-    design-time-name="Package\Police Api Staging Source 1">
+    design-time-name="Package\Police Api Staging Source for Dim">
     <LayoutInfo>
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
         <NodeLayout
           Size="161,42"
-          Id="Package\Police Api Staging Source 1\PoliceAPI Staging"
+          Id="Package\Police Api Staging Source for Dim\PoliceAPI Staging"
           TopLeft="110,37" />
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Police Api Staging Source for Dim\PoliceAPI Staging">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\Police Api Staging Source for Fact">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="161,42"
+          Id="Package\Police Api Staging Source for Fact\PoliceAPI Staging"
+          TopLeft="110,37" />
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Police Api Staging Source for Fact\PoliceAPI Staging">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
 </Objects>]]></DTS:DesignTimeProperties>
 </DTS:Executable>
